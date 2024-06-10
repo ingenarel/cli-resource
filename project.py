@@ -30,7 +30,7 @@ elif osname == "posix":
     def clear():
         os_system("clear")
 
-def bar_maker_ini(bar_height:int):
+def bar_maker_ini(bar_height:int=10, box:str="█"):
     """
     This is the initialization before the bar_maker() function makes the bars.
     It takes a bar_height which is the bar height which should be an int.
@@ -53,9 +53,9 @@ def bar_maker_ini(bar_height:int):
     first_items_that_are_green = bar_box_number_list[:g]
     first_items_that_are_yellow = bar_box_number_list[g:g+y]
     first_items_that_are_red = bar_box_number_list[g+y:g+y+r]
-    bar_height_and_color = {green_boxes:Fore.GREEN+"█" for green_boxes in first_items_that_are_green}
-    bar_height_and_color.update({yellow_boxes:Fore.YELLOW+"█" for yellow_boxes in first_items_that_are_yellow})
-    bar_height_and_color.update({red_boxes:Fore.RED+"█" for red_boxes in first_items_that_are_red})
+    bar_height_and_color = {green_boxes:Fore.GREEN+box for green_boxes in first_items_that_are_green}
+    bar_height_and_color.update({yellow_boxes:Fore.YELLOW+box for yellow_boxes in first_items_that_are_yellow})
+    bar_height_and_color.update({red_boxes:Fore.RED+box for red_boxes in first_items_that_are_red})
 
     return bar_height_and_color
 
