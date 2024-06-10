@@ -162,6 +162,49 @@ def main():
             print(rows)
 
 if __name__ == "__main__":
-    main()
-    # for shit in bar_maker_ini(10):
-    #     print(bar_maker_ini(10)[shit])
+    # main()
+    cpu_bar_height:int = 10
+    cpu_box:str = "██"
+    cpu_bar_width:int = 1
+    cpu_chart_width:int = 10
+    cpu_left_gap:int = 0
+    cpu_right_gap:int = 0
+    cpu_heading:str = "CPU Usage:"
+    cpu_left_side:str = "|"
+    cpu_right_side:str = "|"
+    cpu_roof:str = "_"
+    cpu_floor:str = "‾"
+
+    cpu_bar:dict = bar_maker_ini(cpu_bar_height, cpu_box)
+    cpu_start:bool = True
+    cpu_bar_width= cpu_bar_width*len(cpu_box)
+    cpu_chart_width=cpu_chart_width*cpu_bar_width
+    cpu_starting_chart:list = [["."*cpu_bar_width if box == 0 else " "*cpu_bar_width for box in range(cpu_bar_height)]for _ in range(cpu_chart_width)]
+
+    if cpu_chart_width < len(cpu_heading):
+        exit("cpu chart width is less than cpu heading.")
+
+    cpu_usage = psutil_cpu_percent()
+    common = {
+            "last_bar":bar_maker(
+                resource_usage=int(cpu_usage/100*cpu_bar_height),
+                bar_height_and_color=cpu_bar,
+                bar_width=cpu_bar_width
+                ),
+            "chart_width": cpu_chart_width,
+            "chart_name": cpu_heading,
+            "left_gap": cpu_left_gap,
+            "right_gap": cpu_right_gap,
+            "resource_usage": str(cpu_usage),
+            "left_side": cpu_left_side,
+            "right_side": cpu_right_side,
+            "roof": cpu_roof,
+            "floor": cpu_floor,
+            "bar_width": cpu_bar_width,
+    }
+    last_cpu_starting_chart = chart_maker(**common, last_chart=cpu_starting_chart if cpu_start==True else last_cpu_starting_chart)
+    # time_sleep(1)
+    clear()
+    # for rows in last_cpu_starting_chart:
+    #     print(rows)
+    print(last_cpu_starting_chart)
