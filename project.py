@@ -72,7 +72,7 @@ def bar_maker(resource_usage:int, bar_height_and_color:dict, bar_width:int):
 def chart_maker(
         last_bar:list,
         last_chart:list,
-        # bar_width:int,
+        bar_width:int,
         chart_width:int=30,
         chart_name:str=None,
         left_gap:int=0,
@@ -98,7 +98,7 @@ def chart_maker(
         y = left_side
         y += " "*left_gap
         for stuff in shit:
-            y += stuff
+            y += stuff*bar_width
         y += " "*right_gap
         y += right_side
         proper_chart.append(y)
@@ -151,6 +151,7 @@ def main():
                 "right_side": cpu_right_side,
                 "roof": cpu_roof,
                 "floor": cpu_floor,
+                "bar_width": cpu_bar_width,
         }
         last_cpu_starting_chart = chart_maker(
             **common, last_chart=cpu_starting_chart if cpu_start==True
