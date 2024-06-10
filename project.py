@@ -41,7 +41,9 @@ def bar_maker_ini(bar_height:int=10, box:str="█"):
     elif bar_height < 3:
         exit("The bar height is too low. it should at least be 3")
     bar_box_number_list = [bar_number+1 for bar_number in range(bar_height)]
-    g = y = r = int(bar_height*33/100)
+    g = int(bar_height*42.9/100)
+    y = int(bar_height*28.6/100)
+    z = int(bar_height*14.3/100)
 
     if g+y+r < bar_height:
         g += 1
