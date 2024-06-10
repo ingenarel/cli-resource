@@ -202,11 +202,12 @@ if __name__ == "__main__":
             "bar_width": cpu_bar_width,
     }
     last_cpu_starting_chart = chart_maker(**common, last_chart=cpu_starting_chart if cpu_start==True else last_cpu_starting_chart)
-    # time_sleep(1)
-    # clear()
-    for rows in [list(row) for row in zip(*cpu_starting_chart)][::-1]:
-        for boxes in rows:
-            print(boxes, end="")
-        print()
+    while True:
+        time_sleep(1)
+        clear()
+        for rows in [list(row) for row in zip(*cpu_starting_chart)][::-1]:
+            for boxes in rows:
+                print(boxes, end="")
+            print()
 
     # print(last_cpu_starting_chart)
