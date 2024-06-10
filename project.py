@@ -105,9 +105,9 @@ def chart_maker(
         proper_chart.append(y)
 
     if resource_usage != None:
-        proper_chart.append(left_side+"="*(chart_width+left_gap+right_gap)+right_side)
+        proper_chart.append(left_side+"="*x+right_side)
         resource_usage = resource_usage+"%"
-        proper_chart.append(f"{left_side}{resource_usage:^{chart_width+left_gap+right_gap}}{right_side}")
+        proper_chart.append(f"{left_side}{resource_usage:^{x}}{right_side}")
 
     proper_chart.append(floor*full_width)
 
@@ -129,7 +129,8 @@ def main():
 
     cpu_bar:dict = bar_maker_ini(
         bar_height=cpu_bar_height,
-        box=cpu_box)
+        box=cpu_box
+        )
     cpu_start:bool = True
     cpu_bar_width= len(cpu_box)
     cpu_starting_chart:list = [["."*cpu_bar_width if box == 0 else cpu_fill*cpu_bar_width for box in range(cpu_bar_height)]for _ in range(cpu_chart_width)]
