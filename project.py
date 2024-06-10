@@ -129,6 +129,7 @@ def main():
     cpu_bar:dict = bar_maker_ini(cpu_bar_height, cpu_box)
     cpu_start:bool = True
     cpu_bar_width= cpu_bar_width*len(cpu_box)
+    cpu_chart_width=cpu_chart_width*cpu_bar_width
 
     if cpu_chart_width < len(cpu_heading):
         exit("cpu chart width is less than cpu heading.")
