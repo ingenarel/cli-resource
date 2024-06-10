@@ -116,6 +116,7 @@ def main():
     cpu_right_side:str = "|"
     cpu_roof:str = "_"
     cpu_floor:str = "‾"
+    cpu_box:str = "██"
 
 
     if cpu_chart_width < len(cpu_heading):
