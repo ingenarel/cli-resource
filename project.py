@@ -73,7 +73,7 @@ def chart_maker(
         last_bar:list,              last_chart:list,    chart_width:int=30,
         chart_name:str=None,        left_gap:int=0,     right_gap:int=0,
         resource_usage:str=None,    left_side:str="|",  right_side:str="|",
-        roof:str="_",               floor:str="‾",
+        roof:str="_",               floor:str="‾"
         ):
 
     last_chart.pop(0)
