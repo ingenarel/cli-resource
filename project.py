@@ -109,14 +109,14 @@ def main():
     cpu_left_gap:int = 0
     cpu_right_gap:int = 0
     cpu_starting_chart:list = [["."*cpu_bar_width if box == 0 else " "*cpu_bar_width for box in range(cpu_bar_height)]for _ in range(cpu_chart_width)]
-    cpu_bar:dict = bar_maker_ini(cpu_bar_height)
+    cpu_box:str = "██"
+    cpu_bar:dict = bar_maker_ini(cpu_bar_height, cpu_box)
     cpu_heading:str = "CPU Usage:"
     cpu_start:bool = True
     cpu_left_side:str = "|"
     cpu_right_side:str = "|"
     cpu_roof:str = "_"
     cpu_floor:str = "‾"
-    cpu_box:str = "██"
 
 
     if cpu_chart_width < len(cpu_heading):
