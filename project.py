@@ -72,13 +72,14 @@ def chart_maker(
         last_bar:list,              last_chart:list,    chart_width:int,
         chart_name:str=None,        left_gap:int=0,     right_gap:int=0,
         resource_usage:str=None,    left_side:str="|",  right_side:str="|",
-        roof:str="_",               floor:str="‾"
+        roof:str="_",               floor:str="‾",
+        full_width=chart_width+len(left_side)+len(right_side)+left_gap+right_gap
         ):
     last_chart.pop(0)
     last_chart.append(last_bar)
     up = ""
     down = ""
-    full_width = chart_width+len(left_side)+len(right_side)+left_gap+right_gap
+    # full_width = chart_width+len(left_side)+len(right_side)+left_gap+right_gap
     for _ in range(full_width):
         up += roof
     for _ in range(full_width):
