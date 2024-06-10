@@ -61,7 +61,7 @@ def bar_maker_ini(bar_height:int=10, box:str="█"):
 
     return bar_height_and_color
 
-def bar_maker(resource_usage:int, bar_height_and_color:dict, bar_width:int, fill:str="."):
+def bar_maker(resource_usage:int, bar_height_and_color:dict, bar_width:int, fill:str=".", zero_fill:str="."):
     return [
         bar_height_and_color[resource_value]*bar_width if resource_value <= resource_usage
         else
@@ -125,6 +125,7 @@ def main():
     cpu_roof:str = "_"
     cpu_floor:str = "‾"
     cpu_fill:str = " "
+    cpu_zero_fill:str = "."
 
     cpu_bar:dict = bar_maker_ini(cpu_bar_height, cpu_box)
     cpu_start:bool = True
@@ -142,7 +143,8 @@ def main():
                     resource_usage=int(cpu_usage/100*cpu_bar_height),
                     bar_height_and_color=cpu_bar,
                     bar_width=cpu_bar_width,
-                    fill=cpu_fill
+                    fill=cpu_fill,
+                    zero_fill=cpu_zero_fill
                     ),
                 "chart_width": cpu_chart_width,
                 "chart_name": cpu_heading,
