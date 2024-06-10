@@ -121,9 +121,8 @@ def main():
     if cpu_chart_width < len(cpu_heading):
         exit("cpu chart width is less than cpu heading.")
 
-    for _ in range(100):
-    # while True:
-        cpu_usage = psutil_cpu_percent(interval=1)
+    while True:
+        cpu_usage = psutil_cpu_percent()
         if cpu_start == True:
             last_cpu_starting_chart = chart_maker(
                 last_bar=bar_maker(
@@ -160,6 +159,7 @@ def main():
                 roof=cpu_roof,
                 floor=cpu_floor
                 )
+        time_sleep(1)
         clear()
         for rows in last_cpu_starting_chart:
             print(rows)
