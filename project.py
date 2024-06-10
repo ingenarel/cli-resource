@@ -5,28 +5,27 @@ from subprocess import run as subprocess_run
 
 try:
     from psutil import cpu_percent as psutil_cpu_percent
+
 except ModuleNotFoundError:
     print(f"You're missing the psutil module.")
     print("Trying to install it using pip")
     subprocess_run(["pip", "install", "psutil"])
+
 try:
-    from numpy import rot90
-except ModuleNotFoundError:
-    print(f"You're missing the numpy module.")
-    print("Trying to install it using pip")
-    subprocess_run(["pip", "install", "numpy"])
-try:
-    from colorama import Fore, Style, init
+    from colorama import Fore, init
     init(autoreset=True)
+
 except ModuleNotFoundError:
     print(f"You're missing the colorama module.")
     print("Trying to install it using pip")
     subprocess_run(["pip", "install", "colorama"])
 
 osname = os_name
+
 if osname == "nt":
     def clear():
         os_system("cls")
+
 elif osname == "posix":
     def clear():
         os_system("clear")
@@ -69,25 +68,31 @@ def bar_maker(resource_usage:int, bar_height_and_color:dict, bar_width:int):
         for resource_value in bar_height_and_color]
 
 def chart_maker(
-        last_bar:list,              last_chart:list,    chart_width:int,
+        last_bar:list,              last_chart:list,    chart_width:int=30,
         chart_name:str=None,        left_gap:int=0,     right_gap:int=0,
         resource_usage:str=None,    left_side:str="|",  right_side:str="|",
         roof:str="_",               floor:str="‾",
-        full_width=chart_width+len(left_side)+len(right_side)+left_gap+right_gap
         ):
+
     last_chart.pop(0)
     last_chart.append(last_bar)
+
     up = ""
     down = ""
-    # full_width = chart_width+len(left_side)+len(right_side)+left_gap+right_gap
+
+    full_width = chart_width+len(left_side)+len(right_side)+left_gap+right_gap
+
     for _ in range(full_width):
         up += roof
     for _ in range(full_width):
         down += floor
+
     proper_chart = [up]
+
     if chart_name != None:
         proper_chart.append(f"{left_side}{chart_name:^{chart_width+left_gap+right_gap}}{right_side}")
         proper_chart.append(left_side+"="*(chart_width+left_gap+right_gap)+right_side)
+
     for shit in [list(row) for row in zip(*last_chart)][::-1]:
         y = left_side
         y += " "*left_gap
@@ -96,17 +101,20 @@ def chart_maker(
         y += " "*right_gap
         y += right_side
         proper_chart.append(y)
+
     if resource_usage != None:
         proper_chart.append(left_side+"="*(chart_width+left_gap+right_gap)+right_side)
         resource_usage = resource_usage+"%"
         proper_chart.append(f"{left_side}{resource_usage:^{chart_width+left_gap+right_gap}}{right_side}")
+
     proper_chart.append(down)
+
     return proper_chart
 
 def main():
-    cpu_bar_height:int = 100
+    cpu_bar_height:int = 10
     cpu_bar_width:int = 1
-    cpu_chart_width:int = 20
+    cpu_chart_width:int = 30
     cpu_left_gap:int = 0
     cpu_right_gap:int = 0
     cpu_starting_chart:list = [["."*cpu_bar_width if box == 0 else " "*cpu_bar_width for box in range(cpu_bar_height)]for _ in range(cpu_chart_width)]
@@ -117,6 +125,7 @@ def main():
     cpu_right_side:str = "|"
     cpu_roof:str = "_"
     cpu_floor:str = "‾"
+
 
     if cpu_chart_width < len(cpu_heading):
         exit("cpu chart width is less than cpu heading.")
