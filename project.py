@@ -77,17 +77,18 @@ def chart_maker(
     last_chart.pop(0)
     last_chart.append(last_bar)
 
-    up = ""
+    # up = ""
     down = ""
 
     full_width = chart_width+len(left_side)+len(right_side)+left_gap+right_gap
 
-    for _ in range(full_width):
-        up += roof
+    # for _ in range(full_width):
+    #     up += roof
+    roof = roof*full_width
     for _ in range(full_width):
         down += floor
 
-    proper_chart = [up]
+    proper_chart = [roof]
 
     if chart_name != None:
         proper_chart.append(f"{left_side}{chart_name:^{chart_width+left_gap+right_gap}}{right_side}")
