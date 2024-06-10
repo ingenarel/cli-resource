@@ -98,7 +98,7 @@ def chart_maker(
         y = left_side
         y += " "*left_gap
         for stuff in shit:
-            y += stuff*bar_width
+            y += stuff
         y += " "*right_gap
         y += right_side
         proper_chart.append(y)
@@ -125,11 +125,11 @@ def main():
     cpu_roof:str = "_"
     cpu_floor:str = "‾"
 
-    cpu_starting_chart:list = [["."*cpu_bar_width if box == 0 else " "*cpu_bar_width for box in range(cpu_bar_height)]for _ in range(cpu_chart_width)]
     cpu_bar:dict = bar_maker_ini(cpu_bar_height, cpu_box)
     cpu_start:bool = True
     cpu_bar_width= cpu_bar_width*len(cpu_box)
     cpu_chart_width=cpu_chart_width*cpu_bar_width
+    cpu_starting_chart:list = [["."*cpu_bar_width if box == 0 else " "*cpu_bar_width for box in range(cpu_bar_height)]for _ in range(cpu_chart_width)]
 
     if cpu_chart_width < len(cpu_heading):
         exit("cpu chart width is less than cpu heading.")
