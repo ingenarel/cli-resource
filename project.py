@@ -122,7 +122,7 @@ def main():
     if cpu_chart_width < len(cpu_heading):
         exit("cpu chart width is less than cpu heading.")
 
-    for _ in range(10):
+    for _ in range(100):
     # while True:
         cpu_usage = psutil_cpu_percent(interval=1)
         if cpu_start == True:
