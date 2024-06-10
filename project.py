@@ -80,9 +80,7 @@ def chart_maker(
 
     full_width = chart_width+len(left_side)+len(right_side)+left_gap+right_gap
 
-    roof = roof*full_width
-
-    proper_chart = [roof]
+    proper_chart = [roof*full_width]
 
     if chart_name != None:
         proper_chart.append(f"{left_side}{chart_name:^{chart_width+left_gap+right_gap}}{right_side}")
@@ -102,7 +100,6 @@ def chart_maker(
         resource_usage = resource_usage+"%"
         proper_chart.append(f"{left_side}{resource_usage:^{chart_width+left_gap+right_gap}}{right_side}")
 
-    # floor = floor*full_width
     proper_chart.append(floor*full_width)
 
     return proper_chart
