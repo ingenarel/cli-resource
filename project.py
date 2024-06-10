@@ -34,14 +34,14 @@ def bar_maker_ini(bar_height:int=10, box:str="█"):
     """
     This is the initialization before the bar_maker() function makes the bars.
     It takes a bar_height which is the bar height which should be an int.
-    if the bar height is
+    if the bar height is less than 3, it doesn't allow it.
     """
     if type(bar_height) != int:
         exit("The bar height should be an int.")
-    elif bar_height < 10:
-        exit("The bar height is too low. it should at least be 10")
+    elif bar_height < 3:
+        exit("The bar height is too low. it should at least be 3")
     bar_box_number_list = [bar_number+1 for bar_number in range(bar_height)]
-    g = y = r = int(bar_height*30/100)
+    g = y = r = int(bar_height*33/100)
 
     if g+y+r < bar_height:
         g += 1
