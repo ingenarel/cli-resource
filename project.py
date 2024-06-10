@@ -91,8 +91,9 @@ def chart_maker(
     proper_chart = [roof*full_width]
 
     if chart_name != None:
-        proper_chart.append(f"{left_side}{chart_name:^{chart_width+left_gap+right_gap}}{right_side}")
-        proper_chart.append(left_side+"="*(chart_width+left_gap+right_gap)+right_side)
+        x = chart_width*bar_width+left_gap+right_gap
+        proper_chart.append(f"{left_side}{chart_name:^x}{right_side}")
+        proper_chart.append(left_side+"="*x+right_side)
 
     for shit in [list(row) for row in zip(*last_chart)][::-1]:
         y = left_side
