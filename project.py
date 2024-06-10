@@ -179,7 +179,7 @@ if __name__ == "__main__":
     cpu_start:bool = True
     cpu_bar_width= cpu_bar_width*len(cpu_box)
     cpu_chart_width=cpu_chart_width*cpu_bar_width
-    cpu_starting_chart:list = [["."*cpu_bar_width if box == 0 else " "*cpu_bar_width for box in range(cpu_bar_height)]for _ in range(cpu_chart_width)]
+    cpu_starting_chart:list = [["."*cpu_bar_width if box == 0 else "."*cpu_bar_width for box in range(cpu_bar_height)]for _ in range(cpu_chart_width)]
 
     if cpu_chart_width < len(cpu_heading):
         exit("cpu chart width is less than cpu heading.")
@@ -204,8 +204,8 @@ if __name__ == "__main__":
     }
     last_cpu_starting_chart = chart_maker(**common, last_chart=cpu_starting_chart if cpu_start==True else last_cpu_starting_chart)
     # time_sleep(1)
-    clear()
-    for rows in cpu_starting_chart:
+    # clear()
+    for rows in last_cpu_starting_chart:
         print(rows)
 
     # print(last_cpu_starting_chart)
