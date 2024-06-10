@@ -124,12 +124,13 @@ def main():
     cpu_right_side:str = "|"
     cpu_roof:str = "_"
     cpu_floor:str = "‾"
+    cpu_fill:str = " "
 
     cpu_bar:dict = bar_maker_ini(cpu_bar_height, cpu_box)
     cpu_start:bool = True
     cpu_bar_width= cpu_bar_width*len(cpu_box)
     cpu_chart_width=cpu_chart_width*cpu_bar_width
-    cpu_starting_chart:list = [["."*cpu_bar_width if box == 0 else " "*cpu_bar_width for box in range(cpu_bar_height)]for _ in range(cpu_chart_width)]
+    cpu_starting_chart:list = [["."*cpu_bar_width if box == 0 else cpu_fill*cpu_bar_width for box in range(cpu_bar_height)]for _ in range(cpu_chart_width)]
 
     if cpu_chart_width < len(cpu_heading):
         exit("cpu chart width is less than cpu heading.")
@@ -140,7 +141,8 @@ def main():
                 "last_bar":bar_maker(
                     resource_usage=int(cpu_usage/100*cpu_bar_height),
                     bar_height_and_color=cpu_bar,
-                    bar_width=cpu_bar_width
+                    bar_width=cpu_bar_width,
+                    fill=cpu_fill
                     ),
                 "chart_width": cpu_chart_width,
                 "chart_name": cpu_heading,
