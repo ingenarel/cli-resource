@@ -1,4 +1,3 @@
-import cProfile
 from os import name as os_name
 from os import system as os_system
 from time import sleep as time_sleep
@@ -166,5 +165,4 @@ def main():
             print(rows)
 
 if __name__ == "__main__":
-    # main()
-    cProfile.run("main()")
+    main()
