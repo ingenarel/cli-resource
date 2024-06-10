@@ -65,7 +65,7 @@ def bar_maker(resource_usage:int, bar_height_and_color:dict, bar_width:int, fill
     return [
         bar_height_and_color[resource_value]*bar_width if resource_value <= resource_usage
         else
-            fill*bar_width if resource_value == 1
+            zero_fill*bar_width if resource_value == 1
             else fill*bar_width
         for resource_value in bar_height_and_color]
 
@@ -114,8 +114,7 @@ def chart_maker(
 
 def main():
     cpu_bar_height:int = 10
-    cpu_box:str = "█"
-    cpu_bar_width:int = 1
+    cpu_box:str = "zh"
     cpu_chart_width:int = 10
     cpu_left_gap:int = 0
     cpu_right_gap:int = 0
@@ -129,7 +128,7 @@ def main():
 
     cpu_bar:dict = bar_maker_ini(cpu_bar_height, cpu_box)
     cpu_start:bool = True
-    cpu_bar_width= cpu_bar_width*len(cpu_box)
+    cpu_bar_width= len(cpu_box)
     cpu_chart_width=cpu_chart_width*cpu_bar_width
     cpu_starting_chart:list = [["."*cpu_bar_width if box == 0 else cpu_fill*cpu_bar_width for box in range(cpu_bar_height)]for _ in range(cpu_chart_width)]
 
