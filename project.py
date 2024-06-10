@@ -151,6 +151,6 @@ def main():
             print(rows)
 
 if __name__ == "__main__":
-    # main()
-    for shit in bar_maker_ini(10):
-        print(bar_maker_ini(10)[shit])
+    main()
+    # for shit in bar_maker_ini(10):
+    #     print(bar_maker_ini(10)[shit])
