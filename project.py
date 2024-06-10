@@ -205,6 +205,7 @@ if __name__ == "__main__":
     last_cpu_starting_chart = chart_maker(**common, last_chart=cpu_starting_chart if cpu_start==True else last_cpu_starting_chart)
     # time_sleep(1)
     clear()
-    for rows in last_cpu_starting_chart:
+    for rows in cpu_starting_chart:
         print(rows)
+
     # print(last_cpu_starting_chart)
