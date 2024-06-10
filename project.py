@@ -103,7 +103,7 @@ def chart_maker(
     return proper_chart
 
 def main():
-    cpu_bar_height:int = 50
+    cpu_bar_height:int = 100
     cpu_bar_width:int = 1
     cpu_chart_width:int = 20
     cpu_left_gap:int = 0
