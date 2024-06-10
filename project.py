@@ -87,7 +87,7 @@ def chart_maker(
     last_chart.pop(0)
     last_chart.append(last_bar)
 
-    full_width = chart_width+len(left_side)+len(right_side)+left_gap+right_gap
+    full_width = chart_width*bar_width+len(left_side)+len(right_side)+left_gap+right_gap
     proper_chart = [roof*full_width]
 
     if chart_name != None:
