@@ -61,12 +61,12 @@ def bar_maker_ini(bar_height:int=10, box:str="█"):
 
     return bar_height_and_color
 
-def bar_maker(resource_usage:int, bar_height_and_color:dict, bar_width:int):
+def bar_maker(resource_usage:int, bar_height_and_color:dict, bar_width:int, fill:str="."):
     return [
         bar_height_and_color[resource_value]*bar_width if resource_value <= resource_usage
         else
-            "."*bar_width if resource_value == 1
-            else " "*bar_width
+            fill*bar_width if resource_value == 1
+            else fill*bar_width
         for resource_value in bar_height_and_color]
 
 def chart_maker(
