@@ -116,7 +116,7 @@ def main():
     cpu_bar_height:int = 10
     cpu_box:str = "██"
     cpu_bar_width:int = 1
-    cpu_chart_width:int = 30
+    cpu_chart_width:int = 10
     cpu_left_gap:int = 0
     cpu_right_gap:int = 0
     cpu_heading:str = "CPU Usage:"
