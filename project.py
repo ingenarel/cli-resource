@@ -1,3 +1,4 @@
+import cProfile
 from os import name as os_name
 from os import system as os_system
 from time import sleep as time_sleep
@@ -77,9 +78,7 @@ def chart_maker(
     last_chart.pop(0)
     last_chart.append(last_bar)
 
-
     full_width = chart_width+len(left_side)+len(right_side)+left_gap+right_gap
-
     proper_chart = [roof*full_width]
 
     if chart_name != None:
@@ -123,7 +122,8 @@ def main():
     if cpu_chart_width < len(cpu_heading):
         exit("cpu chart width is less than cpu heading.")
 
-    while True:
+    for _ in range(10):
+    # while True:
         cpu_usage = psutil_cpu_percent(interval=1)
         if cpu_start == True:
             last_cpu_starting_chart = chart_maker(
@@ -166,4 +166,5 @@ def main():
             print(rows)
 
 if __name__ == "__main__":
-    main()
+    # main()
+    cProfile.run("main()")
