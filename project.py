@@ -115,7 +115,7 @@ def chart_maker(
 
 def main():
     cpu_bar_height:int = 10
-    cpu_box:str = "██"
+    cpu_box:str = ";)"
     cpu_chart_width:int = 10
     cpu_left_gap:int = 0
     cpu_right_gap:int = 0
