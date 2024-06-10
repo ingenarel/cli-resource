@@ -143,42 +143,6 @@ def main():
         last_cpu_starting_chart = chart_maker(
             **common, last_chart=cpu_starting_chart if cpu_start==True
                                     else last_cpu_starting_chart)
-        # if cpu_start == True:
-        #     last_cpu_starting_chart = chart_maker(
-        #         last_bar=bar_maker(
-        #             resource_usage=int(cpu_usage/100*cpu_bar_height),
-        #             bar_height_and_color=cpu_bar,
-        #             bar_width=cpu_bar_width
-        #             ),
-        #         last_chart=cpu_starting_chart,
-        #         chart_width=cpu_chart_width,
-        #         chart_name=cpu_heading,
-        #         left_gap=cpu_left_gap,
-        #         right_gap=cpu_right_gap,
-        #         resource_usage=str(cpu_usage),
-        #         left_side=cpu_left_side,
-        #         right_side=cpu_right_side,
-        #         roof=cpu_roof,
-        #         floor=cpu_floor
-        #         )
-        # else:
-        #     last_cpu_starting_chart = chart_maker(
-        #         last_bar=bar_maker(
-        #             resource_usage=int(cpu_usage/100*cpu_bar_height),
-        #             bar_height_and_color=cpu_bar,
-        #             bar_width=cpu_bar_width
-        #             ),
-        #         last_chart=last_cpu_starting_chart,
-        #         chart_width=cpu_chart_width,
-        #         chart_name=cpu_heading,
-        #         left_gap=cpu_left_gap,
-        #         right_gap=cpu_right_gap,
-        #         resource_usage=str(cpu_usage),
-        #         left_side=cpu_left_side,
-        #         right_side=cpu_right_side,
-        #         roof=cpu_roof,
-        #         floor=cpu_floor
-        #         )
         time_sleep(1)
         clear()
         for rows in last_cpu_starting_chart:
