@@ -72,7 +72,7 @@ def bar_maker(resource_usage:int, bar_height_and_color:dict, bar_width:int):
 def chart_maker(
         last_bar:list,
         last_chart:list,
-        bar_width:int,
+        # bar_width:int,
         chart_width:int=30,
         chart_name:str=None,
         left_gap:int=0,
@@ -114,20 +114,21 @@ def chart_maker(
 
 def main():
     cpu_bar_height:int = 10
-    cpu_bar_width:int = 2
+    cpu_box:str = "██"
+    cpu_bar_width:int = 1
     cpu_chart_width:int = 30
     cpu_left_gap:int = 0
     cpu_right_gap:int = 0
-    cpu_starting_chart:list = [["."*cpu_bar_width if box == 0 else " "*cpu_bar_width for box in range(cpu_bar_height)]for _ in range(cpu_chart_width)]
-    cpu_box:str = "█"
-    cpu_bar:dict = bar_maker_ini(cpu_bar_height, cpu_box)
     cpu_heading:str = "CPU Usage:"
-    cpu_start:bool = True
     cpu_left_side:str = "|"
     cpu_right_side:str = "|"
     cpu_roof:str = "_"
     cpu_floor:str = "‾"
 
+    cpu_starting_chart:list = [["."*cpu_bar_width if box == 0 else " "*cpu_bar_width for box in range(cpu_bar_height)]for _ in range(cpu_chart_width)]
+    cpu_bar:dict = bar_maker_ini(cpu_bar_height, cpu_box)
+    cpu_start:bool = True
+    cpu_bar_width= cpu_bar_width*len(cpu_box)
 
     if cpu_chart_width < len(cpu_heading):
         exit("cpu chart width is less than cpu heading.")
