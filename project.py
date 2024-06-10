@@ -92,7 +92,7 @@ def chart_maker(
 
     if chart_name != None:
         x = chart_width*bar_width+left_gap+right_gap
-        proper_chart.append(f"{left_side}{chart_name:^x}{right_side}")
+        proper_chart.append(f"{left_side}{chart_name:^{x}}{right_side}")
         proper_chart.append(left_side+"="*x+right_side)
 
     for shit in [list(row) for row in zip(*last_chart)][::-1]:
@@ -115,7 +115,7 @@ def chart_maker(
 
 def main():
     cpu_bar_height:int = 10
-    cpu_box:str = "zh"
+    cpu_box:str = ""
     cpu_chart_width:int = 10
     cpu_left_gap:int = 0
     cpu_right_gap:int = 0
