@@ -212,11 +212,16 @@ def readwrite(section:str, key:str, value, data_type:type=str):
 
 def main():
     clear()
-    cpu_values, cpu_starting_chart = av_cpu_ini()
-    # print(cpu_values)
-    # print(cpu_starting_chart)
-
-    cpu_last_chart = chart_maker()
+    av_cpu_values, av_cpu_starting_chart = av_cpu_ini()
+    av_cpu_last_chart = chart_maker(
+        "last_bar":bar_maker(
+                resource_usage=int(cpu_usage/100*cpu_bar_height),
+                bar_height_and_color=cpu_bar,
+                bar_width=cpu_bar_width,
+                fill=cpu_fill,
+                zero_fill=cpu_zero_fill
+                )
+    )
 
 
 
