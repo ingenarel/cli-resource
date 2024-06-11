@@ -124,3 +124,4 @@ ________________________________
 ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 
 if you want to change the width you should change the cpu_chart_width variable.
+let's change it to 200 and see what happens.
