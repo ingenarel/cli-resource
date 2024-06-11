@@ -200,7 +200,7 @@ def readwrite(section:str, key:str, value, data_type:type=str, section_comment:s
 
 def startup():
     cpu_bar_height:int = readwrite("CPU", "cpu_bar_height", 10, int)
-    cpu_chart_width:int = readwrite("CPU", "cpu_chart_width", 30, int, section_comment="blalba")
+    cpu_chart_width:int = readwrite("CPU", "cpu_chart_width", 30, int)
     print(f"cpu_bar_height=>{cpu_bar_height}<=")
     print(type(cpu_bar_height))
     print(f"cpu_chart_width=>{cpu_chart_width}<=")
