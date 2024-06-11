@@ -193,16 +193,20 @@ def main():
     cpu_start = True
     cpu_starting_chart, common = av_cpu_ini()
 
-    while True:
-        if cpu_start == True:
-            last_cpu_starting_chart = chart_maker(**common, last_chart=cpu_starting_chart)
-            cpu_start = False
-        else:
-            last_cpu_starting_chart = chart_maker(**common, last_chart=last_cpu_starting_chart)
-        clear()
-        for rows in last_cpu_starting_chart:
-            print(rows)
-        time_sleep(1)
+    # while True:
+    #     if cpu_start == True:
+    #         last_cpu_starting_chart = chart_maker(**common, last_chart=cpu_starting_chart)
+    #         cpu_start = False
+    #     else:
+    #         last_cpu_starting_chart = chart_maker(**common, last_chart=last_cpu_starting_chart)
+    #     clear()
+    #     for rows in last_cpu_starting_chart:
+    #         print(rows)
+    #     time_sleep(1)
+
+    # for shit in cpu_starting_chart:
+    #     print(shit)
+    print(common)
 
 if __name__ == "__main__":
     main()
