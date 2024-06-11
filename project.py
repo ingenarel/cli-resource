@@ -89,7 +89,9 @@ def bar_maker(resource_usage:int, bar_height_and_color:dict, bar_width:int, fill
 
     fill. this should be a string. this will fill the empty values in the bar.
 
-    zero_fill. this should be a string. this will make the represent the value of zero if the bar is totally empty/
+    zero_fill. this should be a string. this will make the represent the value of zero if the bar is totally empty.
+
+    it returns a list. if you print each item from that list you should see a vertical bar.
 
     """
     return [
