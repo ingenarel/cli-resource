@@ -1,3 +1,9 @@
+"""
+if you want to customize this you shouldn't touch this file.
+you should edit the resource_monitor function.
+don't worry it's hard to make that crash. i think.
+"""
+
 from os import name as os_name
 from os import system as os_system
 from time import sleep as time_sleep
@@ -106,7 +112,8 @@ def chart_updater(
     """
     this is the chart updater.
     it takes these values.
-    last_bar. this should be a bar that
+    last_bar: it should be a list that should be the last bar that's made with the bar_maker() function.
+    last_chart: this should be the last chart that's either made with this function, or the starting chart that the
     """
     last_chart.pop(0)
     last_chart.append(last_bar)
