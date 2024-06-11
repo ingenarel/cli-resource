@@ -105,6 +105,9 @@ def chart_maker(
         last_bar:list,
         last_chart:list,
         ):
+    """
+    this makes a chart out of the
+    """
     last_chart.pop(0)
     last_chart.append(last_bar)
     return last_chart
