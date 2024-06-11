@@ -347,3 +347,34 @@ y████████.████████.█.████████�
 yvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvx
 y                            6.6%                            x
 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+
+you can even set a gap to the left and right side.
+let's change the values to these:
+cpu_right_gap = 4
+cpu_left_gap = 10
+and see what happens.
+
+rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr
+y                                CPU Usage:                                x
+ynnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnx
+y                                                                          x
+y                                                                          x
+y                                                                          x
+y                                                                          x
+y                                                                          x
+y                                                                          x
+y                               █                                          x
+y                               █                                          x
+y                               █                                          x
+y                               █                                          x
+y                               █                                          x
+y                               █   █    █                    █            x
+y                               █   █    █                    █            x
+y                               █   ██   █           █       ██            x
+y                            █ ██  ███ ███           █       ██     █      x
+y                            █ ██  ███████        █ ███      ██   ███      x
+y              ████   █  ███ █████ ████████ ███  ██ █████   ████  ████     x
+y          █████████..█████████████████████████.███████████████████████    x
+yvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvx
+y                                   8.7%                                   x
+ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
