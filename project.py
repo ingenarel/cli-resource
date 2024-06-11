@@ -258,6 +258,10 @@ def readwrite(section:str, key:str, value, data_type:type=str):
     """
     this is the function that reads and/or writes the data.
     it takes these inputs.
+    section: which should be an string. this should be the the section name.
+    key: which should be a string. this should be the the key name.
+    value: this could be anything idk.... this should be the value the you're assigning the key to.
+    data_type:
     """
     config = configparser.ConfigParser()
     config_file_name = "resource_monitor.cfg"
