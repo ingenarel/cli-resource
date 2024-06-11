@@ -221,9 +221,9 @@ def main():
         last_bar = bar_maker(
             resource_usage=int(av_cpu_percent/100*av_cpu_values["cpu_bar_height"]),
             bar_height_and_color=av_cpu_bar_height_and_color,
-            bar_width=av_cpu_starting_chart["cpu_bar_width"],
-            fill=av_cpu_starting_chart["cpu_fill"],
-            zero_fill=av_cpu_starting_chart["cpu_zero_fill"]
+            bar_width=av_cpu_values["cpu_bar_width"],
+            fill=av_cpu_values["cpu_fill"],
+            zero_fill=av_cpu_values["cpu_zero_fill"]
         ),
         last_chart=av_cpu_starting_chart
     )
