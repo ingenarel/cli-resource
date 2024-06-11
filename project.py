@@ -185,7 +185,7 @@ def readwrite(section:str, key:str, value, data_type:type=str, section_comment:s
             return data_type(x)
             break
         except KeyError:
-            config[section]=section_comment
+            # config[section]=section_comment
             config[section]={
                 key: f"\"{value}\"" if data_type==str else value,
             }
@@ -201,7 +201,6 @@ def readwrite(section:str, key:str, value, data_type:type=str, section_comment:s
         finally:
             with open(config_file_name, "w") as configfile:
                 config.write(configfile)
-            break
 
 def startup():
     cpu_bar_height:int = readwrite("CPU", "cpu_bar_height", 10, int)
