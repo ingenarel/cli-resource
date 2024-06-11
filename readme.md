@@ -379,5 +379,33 @@ yvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvx
 y                                   8.7%                                   x
 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
 
-and finally you can change the heading too
+and finally you can change the heading too by changing the cpu_heading value.
+cpu_heading = "FULL CUSTOMIZABILITY"
+
+and this happens:
+
+rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr
+y                           FULL CUSTOMIZABILITY                           x
+ynnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnx
+y                                                                          x
+y                                                                          x
+y                                                                          x
+y                                                                          x
+y                                                                          x
+y                                                                          x
+y                                                                          x
+y                                                                          x
+y                                                                          x
+y                                                                          x
+y             █                                                            x
+y          ████                                                            x
+y          █████                                                           x
+y          █████                                                      █    x
+y          █████                                                      █    x
+y          █████                                            █    █    █    x
+y          █████                        █ █      █      █   █ █  █    █    x
+y          ████████.█...█..██...██.█.██████....█.█.████████████████████    x
+yvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvx
+y                                  25.0%                                   x
+ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
 
