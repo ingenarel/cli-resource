@@ -82,7 +82,7 @@ def bar_maker_ini(bar_height:int=10, box:str="█"):
 
     return bar_height_and_color
 
-def bar_maker(resource_usage:int, bar_height_and_color:dict, bar_width:int, fill:str=".", zero_fill:str="."):
+def bar_maker(resource_usage:int, bar_height_and_color:dict, bar_width:int, fill:str=" ", zero_fill:str="."):
     """
     this is the bar maker function. it takes these values:
 
@@ -96,8 +96,10 @@ def bar_maker(resource_usage:int, bar_height_and_color:dict, bar_width:int, fill
     bar_width: this should be an int. it should be the width of the bar.
 
     fill: this should be a string. this will fill the empty values in the bar.
+        the defualt value is " ".
 
     zero_fill: this should be a string. this will make the represent the value of zero if the bar is totally empty.
+        the default value is ".".
 
     it returns a list. if you print each item from that list you should see a vertical bar.
 
@@ -148,7 +150,9 @@ def chart_parser(
     chart: this should be the chart returned from the chart_updater function. it should be a 2d array.
     bar_width: this should be an int. this is the bar width.
     chart_width: this should be an int. this is the chart width.
+        the default value is 30.
     chart_name: this should be an string. this is the heading of the chart.
+        the default value is none.
     left_gap: this should be an int. this should be the gap on the left side.
     right_gap: this should be an int. this should be the gap on the right side.
     resource_usage: this should be a string. this should be the resource that's currently used.
