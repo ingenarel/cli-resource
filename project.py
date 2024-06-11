@@ -148,7 +148,14 @@ def chart_parser(
     chart_width: this should be an int. this is the chart width.
     chart_name: this should be an string. this is the heading of the chart.
     left_gap: this should be an int. this should be the gap on the left side.
-    right_gap: this should be an int. this should be the gap on the right side
+    right_gap: this should be an int. this should be the gap on the right side.
+    resource_usage: this should be a string. this should be the resource that's currently used.
+    left_side: this should be a string. it's the left side bar.
+    right_side: this should be a string. it's the bar on the right side.
+    roof: this should be a string. it's the roof of the chart.
+    floor: this should be a string. it's the the floor of the chart.
+    name_seperator: this should be a string. it's the seperator that seperates the actual chart from the heading.
+    value_seperator: this should be a string. it's the seperator that seperates the actual chart from the value.
 
     """
     full_width = chart_width*bar_width+len(left_side)+len(right_side)+left_gap+right_gap
