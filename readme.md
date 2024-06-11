@@ -323,4 +323,27 @@ cpu_right_side = "x"
 cpu_left_side = "y"
 
 this will generate a chart something like this:
-
+rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr
+y                         CPU Usage:                         x
+ynnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnx
+y                                                            x
+y                                                            x
+y                                                            x
+y                                                            x
+y                                                            x
+y                                                            x
+y                                                            x
+y                                                            x
+y          █                                                 x
+y          █                                                 x
+y          █                                                 x
+y          █                                                 x
+y          █                                         █       x
+y          █                                         █       x
+y          █             █ █                         █    █  x
+y█        ██            ████            ██    █   █  █    █  x
+y█ ██ ██  ███         ████████ █        ███  ███  █  █   ██  x
+y████████.████████.█.████████████.██████████.███.█████..█████x
+yvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvx
+y                            6.6%                            x
+ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
