@@ -185,7 +185,6 @@ def readwrite(section:str, key:str, value, data_type:type=str, section_comment:s
             return data_type(x)
         except KeyError:
             config[section]={
-                ";": section_comment,
                 key: f"\"{value}\"" if data_type==str else value,
             }
             if config.has_section(section):
