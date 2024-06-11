@@ -186,6 +186,8 @@ def chart_parser(
 
 def av_cpu_ini():
     """
+    this is the cpu data initiation function.
+    it takes nothing as input.
     it returns a list of data.
     the first thing is the cpu datas that it reads from the ini file
     or if something is wrong with it, then writes to the ini file and
@@ -238,6 +240,9 @@ def av_cpu_ini():
     )
 
 def readwrite(section:str, key:str, value, data_type:type=str):
+    """
+    this is the function that reads and/or writes the data.
+    """
     config = configparser.ConfigParser()
     config_file_name = "resource_monitor.cfg"
     config.read(config_file_name)
