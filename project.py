@@ -32,11 +32,18 @@ elif osname == "posix":
 def bar_maker_ini(bar_height:int=10, box:str="█"):
     """
     This is the initialization before the bar_maker() function makes the bars.
+    It takes these value:
+
     It takes a bar_height which is the bar height which should be an int.
     if the bar height is less than 3, it doesn't allow it.
+
     it also takes a box which should be a string, and this will represent each
     so called box that the chart will render.
+
+
+
     it returns a dict object. each value within the bar heigh representing a box.
+
     the box are colors are this:
     red which is an x ammount of boxes.
     yellow which is the value of twice the number of green boxes.
@@ -68,6 +75,11 @@ def bar_maker_ini(bar_height:int=10, box:str="█"):
     return bar_height_and_color
 
 def bar_maker(resource_usage:int, bar_height_and_color:dict, bar_width:int, fill:str=".", zero_fill:str="."):
+    """
+    this is the bar maker function. it takes these values:
+    resource_usage which should be an int
+
+    """
     return [
         bar_height_and_color[resource_value] if resource_value <= resource_usage
         else
