@@ -73,6 +73,14 @@ def bar_maker(resource_usage:int, bar_height_and_color:dict, bar_width:int, fill
 def chart_maker(
         last_bar:list,
         last_chart:list,
+        ):
+
+    last_chart.pop(0)
+    last_chart.append(last_bar)
+
+    return last_chart
+
+def chart_parser(
         bar_width:int,
         chart_width:int=30,
         chart_name:str=None,
@@ -84,13 +92,7 @@ def chart_maker(
         roof:str="_",
         floor:str="‾",
         name_seperator:str="=",
-        value_seperator:str="="
-        ):
-
-    last_chart.pop(0)
-    last_chart.append(last_bar)
-
-    return last_chart
+        value_seperator:str="="):
     # full_width = chart_width*bar_width+len(left_side)+len(right_side)+left_gap+right_gap
     # proper_chart = [roof*int(full_width/len(roof))]
     # x = chart_width*bar_width+left_gap+right_gap
@@ -116,6 +118,7 @@ def chart_maker(
     # proper_chart.append(floor*int(full_width/len(floor)))
 
     # return proper_chart
+    ...
 
 def av_cpu_ini():
     cpu_bar_height = readwrite("CPU", "cpu_bar_height", 10, int)
