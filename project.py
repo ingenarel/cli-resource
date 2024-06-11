@@ -184,8 +184,8 @@ def readwrite(section:str, key:str, value, data_type:type=str, section_comment:s
             x = config[section][key][1:-1] if re.search(r"^\".+\"$", config[section][key]) else config[section][key]
             return data_type(x)
         except KeyError:
-            # config[section]=section_comment
             config[section]={
+                ";": section_comment,
                 key: f"\"{value}\"" if data_type==str else value,
             }
             if config.has_section(section):
@@ -202,7 +202,7 @@ def readwrite(section:str, key:str, value, data_type:type=str, section_comment:s
         continue
 
 def startup():
-    cpu_bar_height:int = readwrite("CPU", "cpu_bar_height", 10, int)
+    cpu_bar_height:int = readwrite("CPU", "cpu_bar_height", 10, int, section_comment="blabloa")
     cpu_chart_width:int = readwrite("CPU", "cpu_chart_width", 30, int)
     cpu_left_gap:int = readwrite("CPU", "cpu_left_gap", 0, int)
     cpu_right_gap:int = readwrite("CPU", "cpu_right_gap", 0, int)
