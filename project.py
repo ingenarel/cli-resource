@@ -40,7 +40,7 @@ def bar_maker_ini(bar_height:int=10, box:str="█"):
     the box are colors are this:
     red which is an x ammount of boxes.
     yellow which is the value of twice the number of green boxes.
-    green which is the value of yellow and red.
+    green which is the value of yellow and red combined.
     """
     if type(bar_height) != int:
         exit("The bar height should be an int.")
