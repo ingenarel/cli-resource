@@ -283,3 +283,8 @@ ______________________________________________________________
 |                            6.3%                            |
 ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 
+cpu_value_seperator is the "=" you see on top of the percent value. and
+cpu_name_seperator is the "=" you see after the heading, aka the "cpu usage:" thing.
+lemme change revert the other stuff to default and then change the cpu_value_seperator to "v"
+and cpu_name_seperator to n
+
