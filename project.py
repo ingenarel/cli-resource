@@ -187,17 +187,11 @@ def readwrite(section:str, key:str, value, data_type:type=str, section_comment:s
             config[section]={
                 key: f"\"{value}\"" if data_type==str else value,
             }
-            if section_comment != None:
-                config[section][";"] = section_comment
             if config.has_section(section):
                 config.read(config_file_name)
-            with open(config_file_name, "w") as configfile:
-                config.write(configfile)
         except ValueError:
             config.read(config_file_name)
             config[section][key] = f"\"{value}\"" if data_type==str else value
-            # with open(config_file_name, "w") as configfile:
-            #     config.write(configfile)
         with open(config_file_name, "w") as configfile:
             config.write(configfile)
         continue
@@ -216,7 +210,7 @@ def startup():
     cpu_fill:str = readwrite("CPU", "cpu_fill", " ")
     cpu_zero_fill:str = readwrite("CPU", "cpu_zero_fill", ".")
     cpu_name_seperator:str = readwrite("CPU", "cpu_name_seperator", "=")
-    cpu_value_seperator:str = readwrite("CPU", "cpu_value_seperator", "=", section_comment="blabloa")
+    cpu_value_seperator:str = readwrite("CPU", "cpu_value_seperator", "=")
 
 def main():
     startup()
