@@ -211,18 +211,19 @@ def readwrite(section:str, key:str, value, data_type:type=str):
         continue
 
 def main():
-    start = True
-    while True:
-        cpu_starting_chart, common = av_cpu_ini()
-        if start:
-            last_cpu_starting_chart = chart_maker(**common, last_chart=cpu_starting_chart)
-            start = False
-        else:
-            last_cpu_starting_chart = chart_maker(**common, last_chart=last_cpu_starting_chart)
-        clear()
-        for shit in last_cpu_starting_chart:
-            print(shit)
-        time_sleep(1)
+    print(av_cpu_ini())
+    # start = True
+    # while True:
+    #     cpu_starting_chart, common = av_cpu_ini()
+    #     if start:
+    #         last_cpu_starting_chart = chart_maker(**common, last_chart=cpu_starting_chart)
+    #         start = False
+    #     else:
+    #         last_cpu_starting_chart = chart_maker(**common, last_chart=last_cpu_starting_chart)
+    #     clear()
+    #     for shit in last_cpu_starting_chart:
+    #         print(shit)
+    #     time_sleep(1)
 
 if __name__ == "__main__":
     main()
