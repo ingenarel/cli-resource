@@ -116,7 +116,9 @@ def chart_updater(
     it takes these values.
     last_bar: it should be a list that should be the last bar that's made with the bar_maker() function.
     last_chart: this should be the last chart that's either made with this function, or the starting chart that the code provides.
-        it's a custom 2d array. only provide your custom thing if you know what you're doing
+        it's a custom 2d array. only provide your custom thing if you know what you're doing.
+
+    it returns the updated 2d array aka the updated chart.
     """
     last_chart.pop(0)
     last_chart.append(last_bar)
