@@ -184,11 +184,14 @@ def readwrite(section:str, key:str, value, data_type:type=str, section_comment:s
             x = config[section][key][1:-1] if re.search(r"^\".+\"$", config[section][key]) else config[section][key]
             return data_type(x)
         except KeyError:
-            config[section]={
-                key: f"\"{value}\"" if data_type==str else value,
-            }
+            # config[section]={
+            #     key: f"\"{value}\"" if data_type==str else value,
+            # }
             if config.has_section(section):
                 config.read(config_file_name)
+            else:
+                config.add_section(section)
+            config.set(section, key, value)
         except ValueError:
             config.read(config_file_name)
             config[section][key] = f"\"{value}\"" if data_type==str else value
