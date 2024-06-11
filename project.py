@@ -215,15 +215,9 @@ def main():
     av_cpu_values, av_cpu_starting_chart = av_cpu_ini()
     av_cpu_last_chart = chart_maker(
         last_bar = bar_maker(
-            resource_usage=int(psutil_cpu_percent()/100*cpu_bar_height)
+            resource_usage=int(psutil_cpu_percent()/100*av_cpu_values["cpu_bar_height"])
             )
-    )
-
-
-
-
-
-
+        )
 
     # start = True
     # while True:
