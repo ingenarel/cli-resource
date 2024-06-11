@@ -36,6 +36,11 @@ def bar_maker_ini(bar_height:int=10, box:str="█"):
     if the bar height is less than 3, it doesn't allow it.
     it also takes a box which should be a string, and this will represent each
     so called box that the chart will render.
+    it returns a dict object. each value within the bar heigh representing a box.
+    the box are colors are this:
+    red which is an x ammount of boxes.
+    yellow which is the value of twice the number of green boxes.
+    green which is the value of yellow and red.
     """
     if type(bar_height) != int:
         exit("The bar height should be an int.")
