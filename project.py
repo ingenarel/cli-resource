@@ -216,12 +216,6 @@ def startup():
     cpu_zero_fill:str = readwrite("CPU", "cpu_zero_fill", ".")
     cpu_name_seperator:str = readwrite("CPU", "cpu_name_seperator", "=")
     cpu_value_seperator:str = readwrite("CPU", "cpu_value_seperator", "=")
-    write_comments(
-        filename="resource_monitor.cfg",
-        comments="""
-                this is the pyt
-                """
-        )
 
     # print(f"cpu_bar_height=>{cpu_bar_height}<=")
     # print(type(cpu_bar_height))
