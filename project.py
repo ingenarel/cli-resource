@@ -201,7 +201,7 @@ def main():
         clear()
         # for rows in last_cpu_starting_chart:
         #     print(rows)
-        # time_sleep(1)
+        time_sleep(1)
         print(last_cpu_starting_chart)
 
 if __name__ == "__main__":
