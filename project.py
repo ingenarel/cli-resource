@@ -261,7 +261,9 @@ def readwrite(section:str, key:str, value, data_type:type=str):
     section: which should be an string. this should be the the section name.
     key: which should be a string. this should be the the key name.
     value: this could be anything idk.... this should be the value the you're assigning the key to.
-    data_type:
+    data_type: this should be a type. this should be the type of the value.
+        it returns the value converted to the data type.
+        the default is string.
     """
     config = configparser.ConfigParser()
     config_file_name = "resource_monitor.cfg"
