@@ -141,7 +141,6 @@ def av_cpu_ini(
 
     if cpu_chart_width < len(cpu_heading):
         exit("cpu chart width is less than cpu heading.")
-    cpu_start = True
     cpu_usage = psutil_cpu_percent()
     common = {
             "last_bar":bar_maker(
@@ -164,14 +163,7 @@ def av_cpu_ini(
             "name_seperator": cpu_name_seperator,
             "value_seperator": cpu_value_seperator,
     }
-    if cpu_start == True:
-        last_cpu_starting_chart = chart_maker(**common, last_chart=cpu_starting_chart)
-        cpu_start = False
-    else:
-        last_cpu_starting_chart = chart_maker(**common, last_chart=last_cpu_starting_chart)
-
-    for rows in last_cpu_starting_chart:
-        yield rows
+    return cpu_starting_chart, common
 
 def readwrite(section:str, key:str, value, data_type:type=str):
     config = configparser.ConfigParser()
