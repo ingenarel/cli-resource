@@ -228,4 +228,7 @@ ______________________________________________________________
 
 cool right?
 
+cpu_zero_fill is the ..... thing that you see below.
+
+if i set it to z then this happens.
 
