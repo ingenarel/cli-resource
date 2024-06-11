@@ -196,11 +196,6 @@ def readwrite(section:str, key:str, value, data_type:type=str):
             config.write(configfile)
         continue
 
-def write_comments(filename, comments):
-    with open(filename, "a") as file:
-        comments = comments.strip().split("\n")
-        for stuff in comments:
-            file.write("; "+stuff.strip())
 def startup():
     cpu_bar_height:int = readwrite("CPU", "cpu_bar_height", 10, int)
     cpu_chart_width:int = readwrite("CPU", "cpu_chart_width", 30, int)
@@ -217,24 +212,8 @@ def startup():
     cpu_name_seperator:str = readwrite("CPU", "cpu_name_seperator", "=")
     cpu_value_seperator:str = readwrite("CPU", "cpu_value_seperator", "=")
 
-    # print(f"cpu_bar_height=>{cpu_bar_height}<=")
-    # print(type(cpu_bar_height))
-    # print(f"cpu_chart_width=>{cpu_chart_width}<=")
-    # print(type(cpu_chart_width))
-
-
-
-
-
-
-
-
 def main():
     startup()
-    # config = configparser.ConfigParser()
-    # config_file_name = "resource_monitor.cfg"
-    # config.read(config_file_name)
-    # print(type(config["CPU"]["cpu_bar_height"]))
 
 if __name__ == "__main__":
     main()
