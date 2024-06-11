@@ -138,7 +138,6 @@ def av_cpu_ini(
         )
     cpu_bar_width= len(cpu_box)
     cpu_starting_chart:list = [["."*cpu_bar_width if box == 0 else cpu_fill*cpu_bar_width for box in range(cpu_bar_height)]for _ in range(cpu_chart_width)]
-    # cpu_start:bool = True
 
     if cpu_chart_width < len(cpu_heading):
         exit("cpu chart width is less than cpu heading.")
