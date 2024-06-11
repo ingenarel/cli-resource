@@ -347,6 +347,32 @@ cpu_left_gap = 10
 and see what happens.
 
 ```
+rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr
+y                         CPU Usage:                         x
+ynnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnx
+y                                                            x
+y                                                            x
+y                                                            x
+y                                                            x
+y                                                            x
+y                                                            x
+y           █                                                x
+y           █                                                x
+y           █                                                x
+y          ██                                                x
+y█         ██                                                x
+y█         ██                                            █   x
+y█         ██  ██                                █      ██   x
+y█ █ █████ ████████████ █  ████ ███████ ███ ████ █████  █████x
+y████████████████████████████████████████████████████████████x
+y████████████████████████████████████████████████████████████x
+y████████████████████████████████████████████████████████████x
+y████████████████████████████████████████████████████████████x
+y████████████████████████████████████████████████████████████x
+y████████████████████████████████████████████████████████████x
+yvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvx
+y                           36.3%                            x
+ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
 
 ```
 
