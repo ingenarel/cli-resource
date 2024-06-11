@@ -79,44 +79,45 @@ def chart_maker(
     return last_chart
 
 def chart_parser(
-        bar_width:int,
-        chart_width:int=30,
-        chart_name:str=None,
-        left_gap:int=0,
-        right_gap:int=0,
-        resource_usage:str=None,
-        left_side:str="|",
-        right_side:str="|",
-        roof:str="_",
-        floor:str="‾",
-        name_seperator:str="=",
-        value_seperator:str="="):
-    # full_width = chart_width*bar_width+len(left_side)+len(right_side)+left_gap+right_gap
-    # proper_chart = [roof*int(full_width/len(roof))]
-    # x = chart_width*bar_width+left_gap+right_gap
+    chart:list,
+    bar_width:int,
+    chart_width:int=30,
+    chart_name:str=None,
+    left_gap:int=0,
+    right_gap:int=0,
+    resource_usage:str=None,
+    left_side:str="|",
+    right_side:str="|",
+    roof:str="_",
+    floor:str="‾",
+    name_seperator:str="=",
+    value_seperator:str="="
+        ):
+    full_width = chart_width*bar_width+len(left_side)+len(right_side)+left_gap+right_gap
+    proper_chart = [roof*int(full_width/len(roof))]
+    x = chart_width*bar_width+left_gap+right_gap
 
-    # if chart_name != None:
-    #     proper_chart.append(f"{left_side}{chart_name:^{x}}{right_side}")
-    #     proper_chart.append(left_side+name_seperator*int(x/len(name_seperator))+right_side)
+    if chart_name != None:
+        proper_chart.append(f"{left_side}{chart_name:^{x}}{right_side}")
+        proper_chart.append(left_side+name_seperator*int(x/len(name_seperator))+right_side)
 
-    # for shit in [list(row) for row in zip(*last_chart)][::-1]:
-    #     y = left_side
-    #     y += " "*left_gap
-    #     for stuff in shit:
-    #         y += stuff
-    #     y += " "*right_gap
-    #     y += right_side
-    #     proper_chart.append(y)
+    for shit in [list(row) for row in zip()][::-1]:
+        y = left_side
+        y += " "*left_gap
+        for stuff in shit:
+            y += stuff
+        y += " "*right_gap
+        y += right_side
+        proper_chart.append(y)
 
-    # if resource_usage != None:
-    #     proper_chart.append(left_side+value_seperator*int(x/len(value_seperator))+right_side)
-    #     resource_usage = resource_usage+"%"
-    #     proper_chart.append(f"{left_side}{resource_usage:^{x}}{right_side}")
+    if resource_usage != None:
+        proper_chart.append(left_side+value_seperator*int(x/len(value_seperator))+right_side)
+        resource_usage = resource_usage+"%"
+        proper_chart.append(f"{left_side}{resource_usage:^{x}}{right_side}")
 
-    # proper_chart.append(floor*int(full_width/len(floor)))
+    proper_chart.append(floor*int(full_width/len(floor)))
 
-    # return proper_chart
-    ...
+    return proper_chart
 
 def av_cpu_ini():
     cpu_bar_height = readwrite("CPU", "cpu_bar_height", 10, int)
