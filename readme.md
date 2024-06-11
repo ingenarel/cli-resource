@@ -286,5 +286,30 @@ ______________________________________________________________
 cpu_value_seperator is the "=" you see on top of the percent value. and
 cpu_name_seperator is the "=" you see after the heading, aka the "cpu usage:" thing.
 lemme change revert the other stuff to default and then change the cpu_value_seperator to "v"
-and cpu_name_seperator to n
+and cpu_name_seperator to "n".
+btw you don't have to change the other values to change these two. i just did this so that you can understand the chart more easily.
+______________________________________________________________
+|                         CPU Usage:                         |
+|nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn|
+|                                                            |
+|                                                            |
+|                                                            |
+|                                █                           |
+|                                █                           |
+|                                █                           |
+|                                █                           |
+|                                █                           |
+|                                █                           |
+|                                █                           |
+|                                █                           |
+|                                █                           |
+|                                █                           |
+|       █                        █                           |
+|       █   █              █ █   ██                 █        |
+|       █   ███      █    █████  ██   ███   █ █████ █ █      |
+|       █  █████████████████████ ███  ███ ███ █████████ █  █ |
+|.......█████████████████████████████████████████████████████|
+|vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv|
+|                            8.1%                            |
+‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 
