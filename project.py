@@ -223,7 +223,7 @@ def startup():
     # print(f"cpu_chart_width=>{cpu_chart_width}<=")
     # print(type(cpu_chart_width))
 
-    write_comments("resource_monitor.cfg")
+    # write_comments("resource_monitor.cfg")
 
 
 
