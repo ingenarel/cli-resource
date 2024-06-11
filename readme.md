@@ -409,3 +409,14 @@ yvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvx
 y                                  25.0%                                   x
 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
 
+
+you don't have to worry about deleting the config or deleting a part of the config.
+the code will handle that.
+
+and if you mess up the config so bad that even my error checking can't fix it, just delete it.
+it will regenerate.
+
+
+this is for people who wants to know what's happening under the hood:
+here are the main functions and what they do:
+
