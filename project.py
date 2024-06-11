@@ -160,37 +160,6 @@ def av_cpu_ini():
         cpu_bar_height_and_color,
     ]
 
-    # cpu_bar:dict = bar_maker_ini(
-    #     bar_height=cpu_bar_height,
-    #     box=cpu_box
-    #     )
-
-    # if cpu_chart_width < len(cpu_heading):
-    #     exit("cpu chart width is less than cpu heading.")
-    # cpu_usage = psutil_cpu_percent()
-    # common = {
-    #         "last_bar":bar_maker(
-    #             resource_usage=int(cpu_usage/100*cpu_bar_height),
-    #             bar_height_and_color=cpu_bar,
-    #             bar_width=cpu_bar_width,
-    #             fill=cpu_fill,
-    #             zero_fill=cpu_zero_fill
-    #             ),
-    #         "chart_width": cpu_chart_width,
-    #         "chart_name": cpu_heading,
-    #         "left_gap": cpu_left_gap,
-    #         "right_gap": cpu_right_gap,
-    #         "resource_usage": str(cpu_usage),
-    #         "left_side": cpu_left_side,
-    #         "right_side": cpu_right_side,
-    #         "roof": cpu_roof,
-    #         "floor": cpu_floor,
-    #         "bar_width": cpu_bar_width,
-    #         "name_seperator": cpu_name_seperator,
-    #         "value_seperator": cpu_value_seperator,
-    # }
-    # return(cpu_starting_chart, common)
-
 def readwrite(section:str, key:str, value, data_type:type=str):
     config = configparser.ConfigParser()
     config_file_name = "resource_monitor.cfg"
@@ -228,20 +197,6 @@ def main():
         last_chart=av_cpu_starting_chart
     )
     print(av_cpu_last_chart)
-
-
-    # start = True
-    # while True:
-    #     cpu_starting_chart, common = av_cpu_ini()
-    #     if start:
-    #         last_cpu_starting_chart = chart_maker(**common, last_chart=cpu_starting_chart)
-    #         start = False
-    #     else:
-    #         last_cpu_starting_chart = chart_maker(**common, last_chart=last_cpu_starting_chart)
-    #     clear()
-    #     for shit in last_cpu_starting_chart:
-    #         print(shit)
-    #     time_sleep(1)
 
 if __name__ == "__main__":
     main()
