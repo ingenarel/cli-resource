@@ -199,8 +199,19 @@ def main():
     )
     av_cpu_chart_proper = chart_parser(
         chart=av_cpu_last_chart,
-        bar_width=av_cpu_values["cpu_bar_width"]
+        bar_width=av_cpu_values["cpu_bar_width"],
+        chart_width=av_cpu_values["cpu_chart_width"],
+        chart_name=av_cpu_values["cpu_heading"],
+        left_gap=av_cpu_values["cpu_left_gap"],
+        right_gap=av_cpu_values["cpu_right_gap"],
+        resource_usage=av_cpu_percent,
+        left_side=av_cpu_values["cpu_left_side"],
+        right_side=av_cpu_values["cpu_right_side"],
+        roof=av_cpu_values["cpu_roof"],
+        floor=av_cpu_values["cpu_floor"],
+        name_seperator=av_cpu_values["cpu_name_seperator"],
+        value_seperator=av_cpu_values["cpu_bar_width"],
     )
-
+    print(av_cpu_chart_proper)
 if __name__ == "__main__":
     main()
