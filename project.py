@@ -101,7 +101,7 @@ def chart_parser(
         proper_chart.append(f"{left_side}{chart_name:^{x}}{right_side}")
         proper_chart.append(left_side+name_seperator*int(x/len(name_seperator))+right_side)
 
-    for shit in [list(row) for row in zip()][::-1]:
+    for shit in [list(row) for row in zip(*chart)][::-1]:
         y = left_side
         y += " "*left_gap
         for stuff in shit:
@@ -197,7 +197,7 @@ def main():
         ),
         last_chart=av_cpu_starting_chart
     )
-    print(av_cpu_last_chart)
+    print(chart_parser(av_cpu_last_chart))
 
 if __name__ == "__main__":
     main()
