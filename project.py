@@ -136,7 +136,7 @@ def av_cpu_ini():
 
     cpu_bar_width= len(cpu_box)
     cpu_starting_chart:list = [["."*cpu_bar_width if box == 0 else cpu_fill*cpu_bar_width for box in range(cpu_bar_height)]for _ in range(cpu_chart_width)]
-
+    cpu_bar_height_and_color:dict = bar_maker_ini(bar_height=cpu_bar_height,box=cpu_box)
     return[
         {
             "cpu_bar_height": cpu_bar_height,
@@ -154,7 +154,8 @@ def av_cpu_ini():
             "cpu_name_seperator": cpu_name_seperator,
             "cpu_value_seperator": cpu_value_seperator,
         },
-        cpu_starting_chart
+        cpu_starting_chart,
+        cpu_bar_height_and_color,
     ]
 
     # cpu_bar:dict = bar_maker_ini(
@@ -212,10 +213,13 @@ def readwrite(section:str, key:str, value, data_type:type=str):
 
 def main():
     clear()
-    av_cpu_values, av_cpu_starting_chart = av_cpu_ini()
+    av_cpu_values, av_cpu_starting_chart, av_cpu_bar_height_and_color = av_cpu_ini()
+    av_cpu_percent = psutil_cpu_percent()
     av_cpu_last_chart = chart_maker(
         last_bar = bar_maker(
-            resource_usage=int(psutil_cpu_percent()/100*av_cpu_values["cpu_bar_height"])
+            resource_usage=int(av_cpu_percent/100*av_cpu_values["cpu_bar_height"]),
+            bar_height_and_color=av_cpu_bar_height_and_color,
+            bar_width=av_cpu_starting_chart["cpu_bar_width"]
             )
         )
 
