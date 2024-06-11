@@ -6,7 +6,6 @@ import configparser, re
 
 try:
     from psutil import cpu_percent as psutil_cpu_percent
-
 except ModuleNotFoundError:
     print(f"You're missing the psutil module.")
     print("Trying to install it using pip")
@@ -15,7 +14,6 @@ except ModuleNotFoundError:
 try:
     from colorama import Fore, init
     init(autoreset=True)
-
 except ModuleNotFoundError:
     print(f"You're missing the colorama module.")
     print("Trying to install it using pip")
@@ -36,6 +34,8 @@ def bar_maker_ini(bar_height:int=10, box:str="█"):
     This is the initialization before the bar_maker() function makes the bars.
     It takes a bar_height which is the bar height which should be an int.
     if the bar height is less than 3, it doesn't allow it.
+    it also takes a box which should be a string, and this will represent each
+    so called box that the chart will render.
     """
     if type(bar_height) != int:
         exit("The bar height should be an int.")
