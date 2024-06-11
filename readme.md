@@ -316,4 +316,11 @@ ______________________________________________________________
 you can change the heading, the roof of the chart, the floor of the chart,
 the left side, the right side.
 
-let's change the roof
+let's change these values to these:
+cpu_floor = "f"
+cpu_roof = "r"
+cpu_right_side = "x"
+cpu_left_side = "y"
+
+this will generate a chart something like this:
+
