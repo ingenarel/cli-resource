@@ -204,14 +204,16 @@ def main():
         chart_name=av_cpu_values["cpu_heading"],
         left_gap=av_cpu_values["cpu_left_gap"],
         right_gap=av_cpu_values["cpu_right_gap"],
-        resource_usage=av_cpu_percent,
+        resource_usage=str(av_cpu_percent),
         left_side=av_cpu_values["cpu_left_side"],
         right_side=av_cpu_values["cpu_right_side"],
         roof=av_cpu_values["cpu_roof"],
         floor=av_cpu_values["cpu_floor"],
         name_seperator=av_cpu_values["cpu_name_seperator"],
-        value_seperator=av_cpu_values["cpu_bar_width"],
+        value_seperator=av_cpu_values["cpu_value_seperator"],
     )
-    print(av_cpu_chart_proper)
+    for rows in av_cpu_chart_proper:
+        print(rows)
+
 if __name__ == "__main__":
     main()
