@@ -211,7 +211,9 @@ def readwrite(section:str, key:str, value, data_type:type=str):
         continue
 
 def main():
-    print(av_cpu_ini())
+    clear()
+    cpu_values, cpu_starting_chart = av_cpu_ini()
+    print(cpu_values)
     # start = True
     # while True:
     #     cpu_starting_chart, common = av_cpu_ini()
