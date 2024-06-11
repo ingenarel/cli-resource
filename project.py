@@ -184,36 +184,40 @@ def readwrite(section:str, key:str, value, data_type:type=str):
         continue
 
 def main():
-    clear()
     av_cpu_values, av_cpu_starting_chart, av_cpu_bar_height_and_color = av_cpu_ini()
-    av_cpu_percent = psutil_cpu_percent()
-    av_cpu_last_chart = chart_maker(
-        last_bar = bar_maker(
-            resource_usage=int(av_cpu_percent/100*av_cpu_values["cpu_bar_height"]),
-            bar_height_and_color=av_cpu_bar_height_and_color,
+    start = True
+    while True:
+        av_cpu_percent = psutil_cpu_percent()
+        av_cpu_last_chart = chart_maker(
+            last_bar = bar_maker(
+                resource_usage=int(av_cpu_percent/100*av_cpu_values["cpu_bar_height"]),
+                bar_height_and_color=av_cpu_bar_height_and_color,
+                bar_width=av_cpu_values["cpu_bar_width"],
+                fill=av_cpu_values["cpu_fill"],
+                zero_fill=av_cpu_values["cpu_zero_fill"]
+            ),
+            last_chart=av_cpu_starting_chart if start==True else av_cpu_last_chart
+        )
+        av_cpu_chart_proper = chart_parser(
+            chart=av_cpu_last_chart,
             bar_width=av_cpu_values["cpu_bar_width"],
-            fill=av_cpu_values["cpu_fill"],
-            zero_fill=av_cpu_values["cpu_zero_fill"]
-        ),
-        last_chart=av_cpu_starting_chart
-    )
-    av_cpu_chart_proper = chart_parser(
-        chart=av_cpu_last_chart,
-        bar_width=av_cpu_values["cpu_bar_width"],
-        chart_width=av_cpu_values["cpu_chart_width"],
-        chart_name=av_cpu_values["cpu_heading"],
-        left_gap=av_cpu_values["cpu_left_gap"],
-        right_gap=av_cpu_values["cpu_right_gap"],
-        resource_usage=str(av_cpu_percent),
-        left_side=av_cpu_values["cpu_left_side"],
-        right_side=av_cpu_values["cpu_right_side"],
-        roof=av_cpu_values["cpu_roof"],
-        floor=av_cpu_values["cpu_floor"],
-        name_seperator=av_cpu_values["cpu_name_seperator"],
-        value_seperator=av_cpu_values["cpu_value_seperator"],
-    )
-    for rows in av_cpu_chart_proper:
-        print(rows)
+            chart_width=av_cpu_values["cpu_chart_width"],
+            chart_name=av_cpu_values["cpu_heading"],
+            left_gap=av_cpu_values["cpu_left_gap"],
+            right_gap=av_cpu_values["cpu_right_gap"],
+            resource_usage=str(av_cpu_percent),
+            left_side=av_cpu_values["cpu_left_side"],
+            right_side=av_cpu_values["cpu_right_side"],
+            roof=av_cpu_values["cpu_roof"],
+            floor=av_cpu_values["cpu_floor"],
+            name_seperator=av_cpu_values["cpu_name_seperator"],
+            value_seperator=av_cpu_values["cpu_value_seperator"],
+        )
+        clear()
+        for rows in av_cpu_chart_proper:
+            print(rows)
+        start=False
+        time_sleep(1)
 
 if __name__ == "__main__":
     main()
