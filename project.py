@@ -200,13 +200,13 @@ def readwrite(section:str, key:str, value, data_type:type=str):
 def main():
     cpu_start = True
     cpu_starting_chart, common = av_cpu_ini()
-    if cpu_start == True:
-        last_cpu_starting_chart = chart_maker(**common, last_chart=cpu_starting_chart)
-        cpu_start = False
-    else:
-        last_cpu_starting_chart = chart_maker(**common, last_chart=last_cpu_starting_chart)
 
     while True:
+        if cpu_start == True:
+            last_cpu_starting_chart = chart_maker(**common, last_chart=cpu_starting_chart)
+            cpu_start = False
+        else:
+            last_cpu_starting_chart = chart_maker(**common, last_chart=last_cpu_starting_chart)
         clear()
         for rows in last_cpu_starting_chart:
             print(rows)
