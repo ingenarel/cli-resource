@@ -185,6 +185,9 @@ def chart_parser(
     return proper_chart
 
 def av_cpu_ini():
+    """
+
+    """
     cpu_bar_height = readwrite("CPU", "cpu_bar_height", 10, int)
     cpu_chart_width = readwrite("CPU", "cpu_chart_width", 30, int)
     cpu_left_gap = readwrite("CPU", "cpu_left_gap", 0, int)
