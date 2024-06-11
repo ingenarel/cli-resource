@@ -119,22 +119,22 @@ def chart_parser(
     ...
 
 def av_cpu_ini():
-    return{
-    "cpu_bar_height": readwrite("CPU", "cpu_bar_height", 10, int),
-    "cpu_chart_width": readwrite("CPU", "cpu_chart_width", 30, int),
-    "cpu_left_gap": readwrite("CPU", "cpu_left_gap", 0, int),
-    "cpu_right_gap": readwrite("CPU", "cpu_right_gap", 0, int),
-    "cpu_heading": readwrite("CPU", "cpu_heading", "CPU Usage:"),
-    "cpu_box": readwrite("CPU", "cpu_box", "█"),
-    "cpu_left_side": readwrite("CPU", "cpu_left_side", "|"),
-    "cpu_right_side": readwrite("CPU", "cpu_right_side", "|"),
-    "cpu_roof": readwrite("CPU", "cpu_roof", "_"),
-    "cpu_floor": readwrite("CPU", "cpu_floor", "‾"),
-    "cpu_fill": readwrite("CPU", "cpu_fill", " "),
-    "cpu_zero_fill": readwrite("CPU", "cpu_zero_fill", "."),
-    "cpu_name_seperator": readwrite("CPU", "cpu_name_seperator", "="),
-    "cpu_value_seperator": readwrite("CPU", "cpu_value_seperator", "="),
-    }
+    cpu_bar_height = readwrite("CPU", "cpu_bar_height", 10, int)
+    cpu_chart_width = readwrite("CPU", "cpu_chart_width", 30, int)
+    cpu_left_gap = readwrite("CPU", "cpu_left_gap", 0, int)
+    cpu_right_gap = readwrite("CPU", "cpu_right_gap", 0, int)
+    cpu_heading = readwrite("CPU", "cpu_heading", "CPU Usage:")
+    cpu_box = readwrite("CPU", "cpu_box", "█")
+    cpu_left_side = readwrite("CPU", "cpu_left_side", "|")
+    cpu_right_side = readwrite("CPU", "cpu_right_side", "|")
+    cpu_roof = readwrite("CPU", "cpu_roof", "_")
+    cpu_floor = readwrite("CPU", "cpu_floor", "‾")
+    cpu_fill = readwrite("CPU", "cpu_fill", " ")
+    cpu_zero_fill = readwrite("CPU", "cpu_zero_fill", ".")
+    cpu_name_seperator = readwrite("CPU", "cpu_name_seperator", "=")
+    cpu_value_seperator = readwrite("CPU", "cpu_value_seperator", "=")
+
+    cpu_starting_chart:list = [["."*cpu_bar_width if box == 0 else cpu_fill*cpu_bar_width for box in range(cpu_bar_height)]for _ in range(cpu_chart_width)]
 
     # cpu_bar:dict = bar_maker_ini(
     #     bar_height=cpu_bar_height,
