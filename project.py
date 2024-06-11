@@ -189,21 +189,18 @@ def readwrite(section:str, key:str, value, data_type:type=str):
             }
             if config.has_section(section):
                 config.read(config_file_name)
-            with open(config_file_name, "w") as configfile:
-                config.write(configfile)
-            continue
         except ValueError:
             config.read(config_file_name)
             config[section][key] = f"\"{value}\"" if data_type==str else value
-            with open(config_file_name, "w") as configfile:
-                config.write(configfile)
-            continue
+        with open(config_file_name, "w") as configfile:
+            config.write(configfile)
+        continue
 
 def write_comments(filename):
     with open(filename, "r") as file:
-        file.read()
-
-    print(file)
+        shit = file.read()
+    for stuff in shit:
+        print(stuff)
 
 def startup():
     cpu_bar_height:int = readwrite("CPU", "cpu_bar_height", 10, int)
@@ -226,7 +223,7 @@ def startup():
     # print(f"cpu_chart_width=>{cpu_chart_width}<=")
     # print(type(cpu_chart_width))
 
-    # write_comments("resource_monitor.cfg")
+    write_comments("resource_monitor.cfg")
 
 
 
