@@ -196,12 +196,12 @@ def readwrite(section:str, key:str, value, data_type:type=str):
             config.write(configfile)
         continue
 
-def write_comments(filename):
+def write_comments(filename, comments):
     with open(filename, "r") as file:
         shit = file.read()
-    for stuff in shit:
+    comments = comments.split(comments)
+    for stuff in comments:
         print(stuff)
-
 def startup():
     cpu_bar_height:int = readwrite("CPU", "cpu_bar_height", 10, int)
     cpu_chart_width:int = readwrite("CPU", "cpu_chart_width", 30, int)
@@ -217,13 +217,13 @@ def startup():
     cpu_zero_fill:str = readwrite("CPU", "cpu_zero_fill", ".")
     cpu_name_seperator:str = readwrite("CPU", "cpu_name_seperator", "=")
     cpu_value_seperator:str = readwrite("CPU", "cpu_value_seperator", "=")
+    write_comments("resource_monitor.cfg")
 
     # print(f"cpu_bar_height=>{cpu_bar_height}<=")
     # print(type(cpu_bar_height))
     # print(f"cpu_chart_width=>{cpu_chart_width}<=")
     # print(type(cpu_chart_width))
 
-    write_comments("resource_monitor.cfg")
 
 
 
