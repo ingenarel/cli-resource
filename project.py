@@ -189,7 +189,11 @@ def readwrite(section:str, key:str, value, data_type:type=str):
         continue
 
 def main():
-    cpu_start = True
+    cpu_starting_chart, common = av_cpu_ini()
+    last_cpu_starting_chart = chart_maker(**common, last_chart=cpu_starting_chart)
+    for shit in last_cpu_starting_chart:
+        print(shit)
+    # cpu_start = True
 
     # while True:
     #     cpu_starting_chart, common = av_cpu_ini()
