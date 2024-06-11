@@ -230,7 +230,7 @@ def av_cpu_ini():
 
     cpu_bar_width= len(cpu_box)
 
-    cpu_starting_chart:list = [["."*cpu_bar_width if box == 0 else cpu_fill*cpu_bar_width for box in range(cpu_bar_height)]for _ in range(cpu_chart_width)]
+    cpu_starting_chart:list = [[cpu_zero_fill*cpu_bar_width if box == 0 else cpu_fill*cpu_bar_width for box in range(cpu_bar_height)]for _ in range(cpu_chart_width)]
     cpu_bar_height_and_color:dict = bar_maker_ini(bar_height=cpu_bar_height,box=cpu_box)
     return(
         {
