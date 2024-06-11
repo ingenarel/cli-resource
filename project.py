@@ -199,7 +199,7 @@ def main():
     )
     av_cpu_chart_proper = chart_parser(
         chart=av_cpu_last_chart,
-
+        bar_width=av_cpu_values["cpu_bar_width"]
     )
 
 if __name__ == "__main__":
