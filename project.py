@@ -174,7 +174,7 @@ def av_cpu_ini():
     for rows in last_cpu_starting_chart:
         yield rows
 
-def readwrite(section:str, key:str, value, data_type:type=str, section_comment:str=None, key_value_comments:str=None):
+def readwrite(section:str, key:str, value, data_type:type=str):
     config = configparser.ConfigParser(allow_no_value=True)
     config_file_name = "resource_monitor.cfg"
     config.read(config_file_name)
@@ -188,8 +188,6 @@ def readwrite(section:str, key:str, value, data_type:type=str, section_comment:s
                 config.read(config_file_name)
             else:
                 config.add_section(section)
-            if section_comment != None:
-                config.set(section, ";"+section_comment)
             config.set(section, key, value)
         except ValueError:
             config.read(config_file_name)
@@ -198,31 +196,40 @@ def readwrite(section:str, key:str, value, data_type:type=str, section_comment:s
             config.write(configfile)
         continue
 
+def write_comments(filename):
+    with open(filename, "r") as file:
+        file.read()
+
+    print(file)
+
 def startup():
     cpu_bar_height:int = readwrite("CPU", "cpu_bar_height", 10, int)
     cpu_chart_width:int = readwrite("CPU", "cpu_chart_width", 30, int)
-    print(f"cpu_bar_height=>{cpu_bar_height}<=")
-    print(type(cpu_bar_height))
-    print(f"cpu_chart_width=>{cpu_chart_width}<=")
-    print(type(cpu_chart_width))
+    cpu_left_gap:int = readwrite("CPU", "cpu_left_gap", 0, int)
+    cpu_right_gap:int = readwrite("CPU", "cpu_right_gap", 0, int)
+    cpu_heading:str = readwrite("CPU", "cpu_heading", "CPU Usage:")
+    cpu_box:str = readwrite("CPU", "cpu_box", "█")
+    cpu_left_side:str = readwrite("CPU", "cpu_left_side", "|")
+    cpu_right_side:str = readwrite("CPU", "cpu_right_side", "|")
+    cpu_roof:str = readwrite("CPU", "cpu_roof", "_")
+    cpu_floor:str = readwrite("CPU", "cpu_floor", "‾")
+    cpu_fill:str = readwrite("CPU", "cpu_fill", " ")
+    cpu_zero_fill:str = readwrite("CPU", "cpu_zero_fill", ".")
+    cpu_name_seperator:str = readwrite("CPU", "cpu_name_seperator", "=")
+    cpu_value_seperator:str = readwrite("CPU", "cpu_value_seperator", "=")
+
+    # print(f"cpu_bar_height=>{cpu_bar_height}<=")
+    # print(type(cpu_bar_height))
+    # print(f"cpu_chart_width=>{cpu_chart_width}<=")
+    # print(type(cpu_chart_width))
+
+    write_comments("resource_monitor.cfg")
 
 
 
 
 
 
-    # cpu_left_gap:int = readwrite("CPU", "cpu_left_gap", 0, int)
-    # cpu_right_gap:int = readwrite("CPU", "cpu_right_gap", 0, int)
-    # cpu_heading:str = readwrite("CPU", "cpu_heading", "CPU Usage:")
-    # cpu_box:str = readwrite("CPU", "cpu_box", "█")
-    # cpu_left_side:str = readwrite("CPU", "cpu_left_side", "|")
-    # cpu_right_side:str = readwrite("CPU", "cpu_right_side", "|")
-    # cpu_roof:str = readwrite("CPU", "cpu_roof", "_")
-    # cpu_floor:str = readwrite("CPU", "cpu_floor", "‾")
-    # cpu_fill:str = readwrite("CPU", "cpu_fill", " ")
-    # cpu_zero_fill:str = readwrite("CPU", "cpu_zero_fill", ".")
-    # cpu_name_seperator:str = readwrite("CPU", "cpu_name_seperator", "=")
-    # cpu_value_seperator:str = readwrite("CPU", "cpu_value_seperator", "=")
 
 def main():
     startup()
