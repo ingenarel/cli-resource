@@ -25,6 +25,8 @@ cpu_left_gap = 0
 cpu_chart_width = 30
 cpu_bar_height = 10
 
+
+this will generate something like this:
 ________________________________
 |          CPU Usage:          |
 |==============================|
