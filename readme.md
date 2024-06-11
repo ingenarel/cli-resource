@@ -262,7 +262,32 @@ ______________________________________________________________
 cpu_box is the boxes that represents the bar values. what do i mean by that?
 well let me set it to x and show that to you
 ```
-
+______________________________________________________________
+|                         CPU Usage:                         |
+|============================================================|
+|............................................................|
+|............................................................|
+|............................................................|
+|............................................................|
+|............................................................|
+|............................................................|
+|............................................................|
+|............................................................|
+|............................................................|
+|............................................................|
+|............................................................|
+|..........................................................x.|
+|.........................................................xxx|
+|.xx.xx.x.xxxxxx..xxx.xxx.xxx...xx...xxxx.xx.xxx...x.xxxxxxxx|
+|xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx|
+|xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx|
+|xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx|
+|xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx|
+|xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx|
+|xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx|
+|============================================================|
+|                           40.0%                            |
+‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 ```
 
 cpu_value_seperator is the "=" you see on top of the percent value. and
