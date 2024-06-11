@@ -227,7 +227,7 @@ def main():
         ),
         last_chart=av_cpu_starting_chart
     )
-    print(av_cpu_starting_chart)
+    print(av_cpu_last_chart)
 
 
     # start = True
