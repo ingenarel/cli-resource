@@ -90,7 +90,7 @@ def chart_maker(
     last_chart.pop(0)
     last_chart.append(last_bar)
 
-    return last_chart
+    return [list(row) for row in zip(*last_chart)][::-1]
     # full_width = chart_width*bar_width+len(left_side)+len(right_side)+left_gap+right_gap
     # proper_chart = [roof*int(full_width/len(roof))]
     # x = chart_width*bar_width+left_gap+right_gap
