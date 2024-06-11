@@ -213,7 +213,17 @@ def readwrite(section:str, key:str, value, data_type:type=str):
 def main():
     clear()
     cpu_values, cpu_starting_chart = av_cpu_ini()
-    print(cpu_values)
+    # print(cpu_values)
+    # print(cpu_starting_chart)
+
+    cpu_last_chart = chart_maker()
+
+
+
+
+
+
+
     # start = True
     # while True:
     #     cpu_starting_chart, common = av_cpu_ini()
