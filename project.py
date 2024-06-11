@@ -74,10 +74,8 @@ def chart_maker(
         last_bar:list,
         last_chart:list,
         ):
-
     last_chart.pop(0)
     last_chart.append(last_bar)
-
     return last_chart
 
 def chart_parser(
@@ -136,39 +134,39 @@ def av_cpu_ini():
     cpu_name_seperator = readwrite("CPU", "cpu_name_seperator", "=")
     cpu_value_seperator = readwrite("CPU", "cpu_value_seperator", "=")
 
-    cpu_bar:dict = bar_maker_ini(
-        bar_height=cpu_bar_height,
-        box=cpu_box
-        )
-    cpu_bar_width= len(cpu_box)
-    cpu_starting_chart:list = [["."*cpu_bar_width if box == 0 else cpu_fill*cpu_bar_width for box in range(cpu_bar_height)]for _ in range(cpu_chart_width)]
+    # cpu_bar:dict = bar_maker_ini(
+    #     bar_height=cpu_bar_height,
+    #     box=cpu_box
+    #     )
+    # cpu_bar_width= len(cpu_box)
+    # cpu_starting_chart:list = [["."*cpu_bar_width if box == 0 else cpu_fill*cpu_bar_width for box in range(cpu_bar_height)]for _ in range(cpu_chart_width)]
 
-    if cpu_chart_width < len(cpu_heading):
-        exit("cpu chart width is less than cpu heading.")
-    cpu_usage = psutil_cpu_percent()
-    common = {
-            "last_bar":bar_maker(
-                resource_usage=int(cpu_usage/100*cpu_bar_height),
-                bar_height_and_color=cpu_bar,
-                bar_width=cpu_bar_width,
-                fill=cpu_fill,
-                zero_fill=cpu_zero_fill
-                ),
-            "chart_width": cpu_chart_width,
-            "chart_name": cpu_heading,
-            "left_gap": cpu_left_gap,
-            "right_gap": cpu_right_gap,
-            "resource_usage": str(cpu_usage),
-            "left_side": cpu_left_side,
-            "right_side": cpu_right_side,
-            "roof": cpu_roof,
-            "floor": cpu_floor,
-            "bar_width": cpu_bar_width,
-            "name_seperator": cpu_name_seperator,
-            "value_seperator": cpu_value_seperator,
-    }
+    # if cpu_chart_width < len(cpu_heading):
+    #     exit("cpu chart width is less than cpu heading.")
+    # cpu_usage = psutil_cpu_percent()
+    # common = {
+    #         "last_bar":bar_maker(
+    #             resource_usage=int(cpu_usage/100*cpu_bar_height),
+    #             bar_height_and_color=cpu_bar,
+    #             bar_width=cpu_bar_width,
+    #             fill=cpu_fill,
+    #             zero_fill=cpu_zero_fill
+    #             ),
+    #         "chart_width": cpu_chart_width,
+    #         "chart_name": cpu_heading,
+    #         "left_gap": cpu_left_gap,
+    #         "right_gap": cpu_right_gap,
+    #         "resource_usage": str(cpu_usage),
+    #         "left_side": cpu_left_side,
+    #         "right_side": cpu_right_side,
+    #         "roof": cpu_roof,
+    #         "floor": cpu_floor,
+    #         "bar_width": cpu_bar_width,
+    #         "name_seperator": cpu_name_seperator,
+    #         "value_seperator": cpu_value_seperator,
+    # }
 
-    return(cpu_starting_chart, common)
+    # return(cpu_starting_chart, common)
 
 def readwrite(section:str, key:str, value, data_type:type=str):
     config = configparser.ConfigParser()
