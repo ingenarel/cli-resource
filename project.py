@@ -77,7 +77,19 @@ def bar_maker_ini(bar_height:int=10, box:str="█"):
 def bar_maker(resource_usage:int, bar_height_and_color:dict, bar_width:int, fill:str=".", zero_fill:str="."):
     """
     this is the bar maker function. it takes these values:
-    resource_usage which should be an int
+
+    resource_usage which should be an int. this is the resource currently being used.
+    that means the ammount of boxes that the bar will show.
+
+    bar_height_and_color which should be a dict object. this is actually a value and color map.
+    the bar_maker_ini() provides this. i didn't combine these two because this doesn't need to be calculated every time a new bar is calculated.
+    so i just made that a new function.
+
+    bar_width. this should be an int. it should be the width of the bar.
+
+    fill. this should be a string. this will fill the empty values in the bar.
+
+    zero_fill. this should be a string. this will make the represent the value of zero if the bar is totally empty/
 
     """
     return [
