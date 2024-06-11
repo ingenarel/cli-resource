@@ -48,3 +48,6 @@ ________________________________
 the config file is pretty straightforward.
 before we talk about anything in this file, we should actually talk about how
 to change the size of the chart width and height.
+to change the height you should change the cpu_bar_height variable.
+
+let's change it to something like 70 and see what happens.
