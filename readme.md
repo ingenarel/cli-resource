@@ -498,3 +498,24 @@ chart_parser():
         the default value is "="
 
 av_cpu_ini():
+    this is the cpu data initiation function.
+    it takes nothing as input.
+    it returns a list of data.
+    the first thing is the cpu datas that it reads from the ini file
+    or if something is wrong with it, then writes to the ini file and
+    then reads from it.
+    that data is a dict object.
+    the second thing it returns is the cpu starting chart. that's a list of lists.
+    it's actually a 2d array.
+    the third thing it returns is the bar height and color map.
+    it's a dict object.
+
+readwrite():
+    this is the function that reads and/or writes the data.
+    it takes these inputs.
+    section: which should be an string. this should be the the section name.
+    key: which should be a string. this should be the the key name.
+    value: this could be anything idk.... this should be the value the you're assigning the key to.
+    data_type: this should be a type. this should be the type of the value.
+        it returns the value converted to the data type.
+        the default is string.
