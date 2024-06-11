@@ -197,3 +197,6 @@ ________________________________________________________________________________
 yes we got a really big chart now.
 
 but for easy understanding we're gonna use 20 height and 60 width for now.
+
+you can change the cpu_fill to overwrite the empty stuff in the chart.
+well let's see it in action. i'm gonna use set it to ".".
