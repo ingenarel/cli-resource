@@ -175,7 +175,7 @@ def av_cpu_ini():
         yield rows
 
 def readwrite(section:str, key:str, value, data_type:type=str, section_comment:str=None, key_value_comments:str=None):
-    config = configparser.ConfigParser()
+    config = configparser.ConfigParser(allow_no_value=True)
     config_file_name = "resource_monitor.cfg"
     config.read(config_file_name)
     value = str(value)
