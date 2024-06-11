@@ -184,11 +184,11 @@ def readwrite(section:str, key:str, value, data_type:type=str, section_comment:s
             x = config[section][key][1:-1] if re.search(r"^\".+\"$", config[section][key]) else config[section][key]
             return data_type(x)
         except KeyError:
-            if section_comment != None:
-                config[section][";"] = section_comment
             config[section]={
                 key: f"\"{value}\"" if data_type==str else value,
             }
+            if section_comment != None:
+                config[section][";"] = section_comment
             if config.has_section(section):
                 config.read(config_file_name)
             with open(config_file_name, "w") as configfile:
@@ -203,7 +203,7 @@ def readwrite(section:str, key:str, value, data_type:type=str, section_comment:s
         continue
 
 def startup():
-    cpu_bar_height:int = readwrite("CPU", "cpu_bar_height", 10, int, section_comment="blabloa")
+    cpu_bar_height:int = readwrite("CPU", "cpu_bar_height", 10, int)
     cpu_chart_width:int = readwrite("CPU", "cpu_chart_width", 30, int)
     cpu_left_gap:int = readwrite("CPU", "cpu_left_gap", 0, int)
     cpu_right_gap:int = readwrite("CPU", "cpu_right_gap", 0, int)
@@ -216,7 +216,7 @@ def startup():
     cpu_fill:str = readwrite("CPU", "cpu_fill", " ")
     cpu_zero_fill:str = readwrite("CPU", "cpu_zero_fill", ".")
     cpu_name_seperator:str = readwrite("CPU", "cpu_name_seperator", "=")
-    cpu_value_seperator:str = readwrite("CPU", "cpu_value_seperator", "=")
+    cpu_value_seperator:str = readwrite("CPU", "cpu_value_seperator", "=", section_comment="blabloa")
 
 def main():
     startup()
