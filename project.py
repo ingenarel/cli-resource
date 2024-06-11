@@ -162,6 +162,7 @@ def chart_parser(
     left_side: this should be a string. it's the left side bar.
         the default value is "|"
     right_side: this should be a string. it's the bar on the right side.
+        the default value is "|"
     roof: this should be a string. it's the roof of the chart.
     floor: this should be a string. it's the the floor of the chart.
     name_seperator: this should be a string. it's the seperator that seperates the actual chart from the heading.
