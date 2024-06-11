@@ -175,11 +175,11 @@ def av_cpu_ini():
         yield rows
 
 def readwrite(section:str, key:str, value, data_type:type=str):
-    config = configparser.ConfigParser(allow_no_value=True)
+    config = configparser.ConfigParser()
     config_file_name = "resource_monitor.cfg"
+    config.read(config_file_name)
     value = str(value)
     while True:
-        config.read(config_file_name)
         try:
             x = config[section][key][1:-1] if re.search(r"^\".+\"$", config[section][key]) else config[section][key]
             return data_type(x)
@@ -187,11 +187,17 @@ def readwrite(section:str, key:str, value, data_type:type=str):
             config[section]={
                 key: f"\"{value}\"" if data_type==str else value,
             }
+            if config.has_section(section):
+                config.read(config_file_name)
+            with open(config_file_name, "w") as configfile:
+                config.write(configfile)
+            continue
         except ValueError:
+            config.read(config_file_name)
             config[section][key] = f"\"{value}\"" if data_type==str else value
-        with open(config_file_name, "w") as configfile:
-            config.write(configfile)
-        continue
+            with open(config_file_name, "w") as configfile:
+                config.write(configfile)
+            continue
 
 def write_comments(filename):
     with open(filename, "r") as file:
