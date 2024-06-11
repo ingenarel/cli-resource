@@ -190,27 +190,18 @@ def readwrite(section:str, key:str, value, data_type:type=str):
         continue
 
 def main():
-    cpu_starting_chart, common = av_cpu_ini()
-    last_cpu_starting_chart = chart_maker(**common, last_chart=cpu_starting_chart)
-    for shit in last_cpu_starting_chart:
-        print(shit)
-    last_cpu_starting_chart = chart_maker(**common, last_chart=last_cpu_starting_chart)
-    for shit in last_cpu_starting_chart:
-        print(shit)
-    # cpu_start = True
-
-    # while True:
-    #     cpu_starting_chart, common = av_cpu_ini()
-    #     if cpu_start == True:
-    #         last_cpu_starting_chart = chart_maker(**common, last_chart=cpu_starting_chart)
-    #         cpu_start = False
-    #     else:
-    #         last_cpu_starting_chart = chart_maker(**common, last_chart=last_cpu_starting_chart)
-    #     clear()
-    #     # for rows in last_cpu_starting_chart:
-    #     #     print(rows)
-    #     time_sleep(1)
-    #     print(last_cpu_starting_chart)
+    start = True
+    while True:
+        cpu_starting_chart, common = av_cpu_ini()
+        if start:
+            last_cpu_starting_chart = chart_maker(**common, last_chart=cpu_starting_chart)
+            start = False
+        else:
+            last_cpu_starting_chart = chart_maker(**common, last_chart=last_cpu_starting_chart)
+        clear()
+        for shit in last_cpu_starting_chart:
+            print(shit)
+        time_sleep(1)
 
 if __name__ == "__main__":
     main()
