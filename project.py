@@ -165,7 +165,6 @@ def av_cpu_ini():
     #         "name_seperator": cpu_name_seperator,
     #         "value_seperator": cpu_value_seperator,
     # }
-
     # return(cpu_starting_chart, common)
 
 def readwrite(section:str, key:str, value, data_type:type=str):
