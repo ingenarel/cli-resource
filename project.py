@@ -200,7 +200,7 @@ def write_comments(filename, comments):
     with open(filename, "a") as file:
         comments = comments.strip().split("\n")
         for stuff in comments:
-            file.write(";"+stuff.strip())
+            file.write("; "+stuff.strip())
 def startup():
     cpu_bar_height:int = readwrite("CPU", "cpu_bar_height", 10, int)
     cpu_chart_width:int = readwrite("CPU", "cpu_chart_width", 30, int)
@@ -219,7 +219,7 @@ def startup():
     write_comments(
         filename="resource_monitor.cfg",
         comments="""
-                this is the
+                this is the pyt
                 """
         )
 
