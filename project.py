@@ -137,6 +137,26 @@ def av_cpu_ini():
     cpu_bar_width= len(cpu_box)
     cpu_starting_chart:list = [["."*cpu_bar_width if box == 0 else cpu_fill*cpu_bar_width for box in range(cpu_bar_height)]for _ in range(cpu_chart_width)]
 
+    return[
+        {
+            "cpu_bar_height": cpu_bar_height,
+            "cpu_chart_width": cpu_chart_width,
+            "cpu_left_gap": cpu_left_gap,
+            "cpu_right_gap": cpu_right_gap,
+            "cpu_heading": cpu_heading,
+            "cpu_box": cpu_box,
+            "cpu_left_side": cpu_left_side,
+            "cpu_right_side": cpu_right_side,
+            "cpu_roof": cpu_roof,
+            "cpu_floor": cpu_floor,
+            "cpu_fill": cpu_fill,
+            "cpu_zero_fill": cpu_zero_fill,
+            "cpu_name_seperator": cpu_name_seperator,
+            "cpu_value_seperator": cpu_value_seperator,
+        },
+        cpu_starting_chart
+    ]
+
     # cpu_bar:dict = bar_maker_ini(
     #     bar_height=cpu_bar_height,
     #     box=cpu_box
