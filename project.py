@@ -242,6 +242,7 @@ def av_cpu_ini():
 def readwrite(section:str, key:str, value, data_type:type=str):
     """
     this is the function that reads and/or writes the data.
+    then it
     """
     config = configparser.ConfigParser()
     config_file_name = "resource_monitor.cfg"
