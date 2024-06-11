@@ -224,8 +224,11 @@ def main():
             bar_width=av_cpu_starting_chart["cpu_bar_width"],
             fill=av_cpu_starting_chart["cpu_fill"],
             zero_fill=av_cpu_starting_chart["cpu_zero_fill"]
-            )
-        )
+        ),
+        last_chart=av_cpu_starting_chart
+    )
+    print(av_cpu_starting_chart)
+
 
     # start = True
     # while True:
