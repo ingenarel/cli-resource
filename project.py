@@ -197,9 +197,9 @@ def readwrite(section:str, key:str, value, data_type:type=str, section_comment:s
             config[section][key] = f"\"{value}\"" if data_type==str else value
             # with open(config_file_name, "w") as configfile:
             #     config.write(configfile)
-        finally:
-            with open(config_file_name, "w") as configfile:
-                config.write(configfile)
+        with open(config_file_name, "w") as configfile:
+            config.write(configfile)
+        continue
 
 def startup():
     cpu_bar_height:int = readwrite("CPU", "cpu_bar_height", 10, int)
