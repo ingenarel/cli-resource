@@ -196,24 +196,26 @@ def readwrite(section:str, key:str, value, data_type:type=str):
             config.write(configfile)
         continue
 
-def startup():
-    cpu_bar_height:int = readwrite("CPU", "cpu_bar_height", 10, int)
-    cpu_chart_width:int = readwrite("CPU", "cpu_chart_width", 30, int)
-    cpu_left_gap:int = readwrite("CPU", "cpu_left_gap", 0, int)
-    cpu_right_gap:int = readwrite("CPU", "cpu_right_gap", 0, int)
-    cpu_heading:str = readwrite("CPU", "cpu_heading", "CPU Usage:")
-    cpu_box:str = readwrite("CPU", "cpu_box", "█")
-    cpu_left_side:str = readwrite("CPU", "cpu_left_side", "|")
-    cpu_right_side:str = readwrite("CPU", "cpu_right_side", "|")
-    cpu_roof:str = readwrite("CPU", "cpu_roof", "_")
-    cpu_floor:str = readwrite("CPU", "cpu_floor", "‾")
-    cpu_fill:str = readwrite("CPU", "cpu_fill", " ")
-    cpu_zero_fill:str = readwrite("CPU", "cpu_zero_fill", ".")
-    cpu_name_seperator:str = readwrite("CPU", "cpu_name_seperator", "=")
-    cpu_value_seperator:str = readwrite("CPU", "cpu_value_seperator", "=")
+def av_cpu_startup():
+    return[
+        readwrite("CPU", "cpu_bar_height", 10, int),
+        readwrite("CPU", "cpu_chart_width", 30, int),
+        readwrite("CPU", "cpu_left_gap", 0, int),
+        readwrite("CPU", "cpu_right_gap", 0, int),
+        readwrite("CPU", "cpu_heading", "CPU Usage:"),
+        readwrite("CPU", "cpu_box", "█"),
+        readwrite("CPU", "cpu_left_side", "|"),
+        readwrite("CPU", "cpu_right_side", "|"),
+        readwrite("CPU", "cpu_roof", "_"),
+        readwrite("CPU", "cpu_floor", "‾"),
+        readwrite("CPU", "cpu_fill", " "),
+        readwrite("CPU", "cpu_zero_fill", "."),
+        readwrite("CPU", "cpu_name_seperator", "="),
+        readwrite("CPU", "cpu_value_seperator", "="),
+        ]
 
 def main():
-    startup()
+    av_cpu_startup()
 
 if __name__ == "__main__":
     main()
