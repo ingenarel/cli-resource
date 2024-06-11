@@ -197,7 +197,7 @@ def readwrite(section:str, key:str, value, data_type:type=str):
         continue
 
 def av_cpu_startup():
-    return[
+    return(
         readwrite("CPU", "cpu_bar_height", 10, int),
         readwrite("CPU", "cpu_chart_width", 30, int),
         readwrite("CPU", "cpu_left_gap", 0, int),
@@ -212,10 +212,12 @@ def av_cpu_startup():
         readwrite("CPU", "cpu_zero_fill", "."),
         readwrite("CPU", "cpu_name_seperator", "="),
         readwrite("CPU", "cpu_value_seperator", "="),
-        ]
+        )
 
 def main():
-    av_cpu_startup()
+    for shit in av_cpu_startup():
+        print(f">{shit}<")
+        print(type(shit))
 
 if __name__ == "__main__":
     main()
