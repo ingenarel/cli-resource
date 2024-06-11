@@ -183,7 +183,6 @@ def readwrite(section:str, key:str, value, data_type:type=str, section_comment:s
         try:
             x = config[section][key][1:-1] if re.search(r"^\".+\"$", config[section][key]) else config[section][key]
             return data_type(x)
-            break
         except KeyError:
             # config[section]=section_comment
             config[section]={
