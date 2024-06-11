@@ -139,6 +139,18 @@ def chart_parser(
     name_seperator:str="=",
     value_seperator:str="="
         ):
+    """
+    this parses the 2d array returned from chart_updater into a human readeable chart.
+    it takes these values:
+
+    chart: this should be the chart returned from the chart_updater function. it should be a 2d array.
+    bar_width: this should be an int. this is the bar width.
+    chart_width: this should be an int. this is the chart width.
+    chart_name: this should be an string. this is the heading of the chart.
+    left_gap: this should be an int. this should be the gap on the left side.
+    right_gap: this should be an int. this should be the gap on the right side
+
+    """
     full_width = chart_width*bar_width+len(left_side)+len(right_side)+left_gap+right_gap
     proper_chart = [roof*int(full_width/len(roof))]
     x = chart_width*bar_width+left_gap+right_gap
