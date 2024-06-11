@@ -101,12 +101,12 @@ def bar_maker(resource_usage:int, bar_height_and_color:dict, bar_width:int, fill
             else fill*bar_width
         for resource_value in bar_height_and_color]
 
-def chart_maker(
+def chart_updater(
         last_bar:list,
         last_chart:list,
         ):
     """
-    this makes a chart out of the
+    this is more of a
     """
     last_chart.pop(0)
     last_chart.append(last_bar)
@@ -222,7 +222,7 @@ def main():
     start = True
     while True:
         av_cpu_percent = psutil_cpu_percent()
-        av_cpu_last_chart = chart_maker(
+        av_cpu_last_chart = chart_updater(
             last_bar = bar_maker(
                 resource_usage=int(av_cpu_percent/100*av_cpu_values["cpu_bar_height"]),
                 bar_height_and_color=av_cpu_bar_height_and_color,
