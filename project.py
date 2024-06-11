@@ -66,12 +66,13 @@ def bar_maker_ini(bar_height:int=10, box:str="█"):
     y = int(bar_height*0.286)
     r = int(bar_height*0.143)
 
-    if g+y+r < bar_height:
-        g += 1
+    while g+y+r < bar_height:
         if g+y+r < bar_height:
-            y += 1
+            g += 1
             if g+y+r < bar_height:
-                r += 1
+                y += 1
+                if g+y+r < bar_height:
+                    r += 1
 
     first_items_that_are_green = bar_box_number_list[:g]
     first_items_that_are_yellow = bar_box_number_list[g:g+y]
