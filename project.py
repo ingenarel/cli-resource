@@ -44,9 +44,11 @@ def bar_maker_ini(bar_height:int=10, box:str="█"):
 
     bar_height: which is the bar height which should be an int.
         if the bar height is less than 3, it doesn't allow it.
+        the default value is 10.
 
     box: which should be a string, and this will represent each
         so called box that the chart will render.
+        the default value is "█".
 
     it returns a dict object. each value within the bar heigh representing a box.
 
