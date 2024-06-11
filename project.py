@@ -154,8 +154,11 @@ def chart_parser(
     chart_name: this should be an string. this is the heading of the chart.
         the default value is none.
     left_gap: this should be an int. this should be the gap on the left side.
+        the default value is 0
     right_gap: this should be an int. this should be the gap on the right side.
+        the default value is 0.
     resource_usage: this should be a string. this should be the resource that's currently used.
+        the default value is None.
     left_side: this should be a string. it's the left side bar.
     right_side: this should be a string. it's the bar on the right side.
     roof: this should be a string. it's the roof of the chart.
