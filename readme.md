@@ -122,3 +122,5 @@ ________________________________
 |==============================|
 |            16.8%             |
 ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+
+if you want to change the width you should change the cpu_chart_width variable.
