@@ -190,6 +190,11 @@ def av_cpu_ini():
     the first thing is the cpu datas that it reads from the ini file
     or if something is wrong with it, then writes to the ini file and
     then reads from it.
+    that data is a dict object.
+    the second thing it returns is the cpu starting chart. that's a list of lists.
+    it's actually a 2d array.
+    the third thing it returns is the bar height and color map.
+    it's a dict object.
     """
     cpu_bar_height = readwrite("CPU", "cpu_bar_height", 10, int)
     cpu_chart_width = readwrite("CPU", "cpu_chart_width", 30, int)
