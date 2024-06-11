@@ -187,7 +187,9 @@ def chart_parser(
 def av_cpu_ini():
     """
     it returns a list of data.
-    first
+    the first thing is the cpu datas that it reads from the ini file
+    or if something is wrong with it, then writes to the ini file and
+    then reads from it.
     """
     cpu_bar_height = readwrite("CPU", "cpu_bar_height", 10, int)
     cpu_chart_width = readwrite("CPU", "cpu_chart_width", 30, int)
