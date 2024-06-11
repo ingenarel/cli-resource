@@ -420,3 +420,21 @@ it will regenerate.
 this is for people who wants to know what's happening under the hood:
 here are the main functions and what they do:
 
+bar_ini():
+    This is the initialization before the bar_maker() function makes the bars.
+    It takes these value:
+
+    bar_height: which is the bar height which should be an int.
+        if the bar height is less than 3, it doesn't allow it.
+        the default value is 10.
+
+    box: which should be a string, and this will represent each
+        so called box that the chart will render.
+        the default value is "█".
+
+    it returns a dict object. each value within the bar heigh representing a box.
+
+    the box are colors are this:
+    red which is an x ammount of boxes.
+    yellow which is the value of twice the number of green boxes.
+    green which is the value of yellow and red combined.
