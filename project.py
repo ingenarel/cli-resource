@@ -90,31 +90,32 @@ def chart_maker(
     last_chart.pop(0)
     last_chart.append(last_bar)
 
-    full_width = chart_width*bar_width+len(left_side)+len(right_side)+left_gap+right_gap
-    proper_chart = [roof*int(full_width/len(roof))]
-    x = chart_width*bar_width+left_gap+right_gap
+    return last_chart
+    # full_width = chart_width*bar_width+len(left_side)+len(right_side)+left_gap+right_gap
+    # proper_chart = [roof*int(full_width/len(roof))]
+    # x = chart_width*bar_width+left_gap+right_gap
 
-    if chart_name != None:
-        proper_chart.append(f"{left_side}{chart_name:^{x}}{right_side}")
-        proper_chart.append(left_side+name_seperator*int(x/len(name_seperator))+right_side)
+    # if chart_name != None:
+    #     proper_chart.append(f"{left_side}{chart_name:^{x}}{right_side}")
+    #     proper_chart.append(left_side+name_seperator*int(x/len(name_seperator))+right_side)
 
-    for shit in [list(row) for row in zip(*last_chart)][::-1]:
-        y = left_side
-        y += " "*left_gap
-        for stuff in shit:
-            y += stuff
-        y += " "*right_gap
-        y += right_side
-        proper_chart.append(y)
+    # for shit in [list(row) for row in zip(*last_chart)][::-1]:
+    #     y = left_side
+    #     y += " "*left_gap
+    #     for stuff in shit:
+    #         y += stuff
+    #     y += " "*right_gap
+    #     y += right_side
+    #     proper_chart.append(y)
 
-    if resource_usage != None:
-        proper_chart.append(left_side+value_seperator*int(x/len(value_seperator))+right_side)
-        resource_usage = resource_usage+"%"
-        proper_chart.append(f"{left_side}{resource_usage:^{x}}{right_side}")
+    # if resource_usage != None:
+    #     proper_chart.append(left_side+value_seperator*int(x/len(value_seperator))+right_side)
+    #     resource_usage = resource_usage+"%"
+    #     proper_chart.append(f"{left_side}{resource_usage:^{x}}{right_side}")
 
-    proper_chart.append(floor*int(full_width/len(floor)))
+    # proper_chart.append(floor*int(full_width/len(floor)))
 
-    return proper_chart
+    # return proper_chart
 
 def av_cpu_ini():
     cpu_bar_height = readwrite("CPU", "cpu_bar_height", 10, int)
@@ -191,6 +192,9 @@ def readwrite(section:str, key:str, value, data_type:type=str):
 def main():
     cpu_starting_chart, common = av_cpu_ini()
     last_cpu_starting_chart = chart_maker(**common, last_chart=cpu_starting_chart)
+    for shit in last_cpu_starting_chart:
+        print(shit)
+    last_cpu_starting_chart = chart_maker(**common, last_chart=last_cpu_starting_chart)
     for shit in last_cpu_starting_chart:
         print(shit)
     # cpu_start = True
