@@ -174,7 +174,7 @@ def av_cpu_ini():
     for rows in last_cpu_starting_chart:
         yield rows
 
-def readwrite(section:str, key:str, value, data_type:type=str):
+def readwrite(section:str, key:str, value, data_type:type=str, section_comment:str=None):
     config = configparser.ConfigParser()
     config_file_name = "resource_monitor.cfg"
     config.read(config_file_name)
