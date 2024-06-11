@@ -116,22 +116,22 @@ def chart_maker(
 
     return proper_chart
 
-def av_cpu_ini():
-    cpu_bar_height:int = 30
-    cpu_chart_width:int = 140
-    cpu_left_gap:int = 0
-    cpu_right_gap:int = 0
-    cpu_heading:str = "CPU Usage:"
-    cpu_box:str = "█"
-    cpu_left_side:str = "|"
-    cpu_right_side:str = "|"
-    cpu_roof:str = "_"
-    cpu_floor:str = "‾"
-    cpu_fill:str = " "
-    cpu_zero_fill:str = "."
-    cpu_name_seperator:str = "="
-    cpu_value_seperator:str = "="
-
+def av_cpu_ini(
+    cpu_bar_height:int = 30,
+    cpu_chart_width:int = 140,
+    cpu_left_gap:int = 0,
+    cpu_right_gap:int = 0,
+    cpu_heading:str = "CPU Usage:",
+    cpu_box:str = "█",
+    cpu_left_side:str = "|",
+    cpu_right_side:str = "|",
+    cpu_roof:str = "_",
+    cpu_floor:str = "‾",
+    cpu_fill:str = " ",
+    cpu_zero_fill:str = ".",
+    cpu_name_seperator:str = "=",
+    cpu_value_seperator:str = "=",
+    ):
     cpu_bar:dict = bar_maker_ini(
         bar_height=cpu_bar_height,
         box=cpu_box
@@ -197,27 +197,26 @@ def readwrite(section:str, key:str, value, data_type:type=str):
         continue
 
 def av_cpu_startup():
-    return(
-        readwrite("CPU", "cpu_bar_height", 10, int),
-        readwrite("CPU", "cpu_chart_width", 30, int),
-        readwrite("CPU", "cpu_left_gap", 0, int),
-        readwrite("CPU", "cpu_right_gap", 0, int),
-        readwrite("CPU", "cpu_heading", "CPU Usage:"),
-        readwrite("CPU", "cpu_box", "█"),
-        readwrite("CPU", "cpu_left_side", "|"),
-        readwrite("CPU", "cpu_right_side", "|"),
-        readwrite("CPU", "cpu_roof", "_"),
-        readwrite("CPU", "cpu_floor", "‾"),
-        readwrite("CPU", "cpu_fill", " "),
-        readwrite("CPU", "cpu_zero_fill", "."),
-        readwrite("CPU", "cpu_name_seperator", "="),
-        readwrite("CPU", "cpu_value_seperator", "="),
-        )
+    return{
+        "cpu_bar_height": readwrite("CPU", "cpu_bar_height", 10, int),
+        "cpu_chart_width": readwrite("CPU", "cpu_chart_width", 30, int),
+        "cpu_left_gap": readwrite("CPU", "cpu_left_gap", 0, int),
+        "cpu_right_gap": readwrite("CPU", "cpu_right_gap", 0, int),
+        "cpu_heading": readwrite("CPU", "cpu_heading", "CPU Usage:"),
+        "cpu_box": readwrite("CPU", "cpu_box", "█"),
+        "cpu_left_side": readwrite("CPU", "cpu_left_side", "|"),
+        "cpu_right_side": readwrite("CPU", "cpu_right_side", "|"),
+        "cpu_roof": readwrite("CPU", "cpu_roof", "_"),
+        "cpu_floor": readwrite("CPU", "cpu_floor", "‾"),
+        "cpu_fill": readwrite("CPU", "cpu_fill", " "),
+        "cpu_zero_fill": readwrite("CPU", "cpu_zero_fill", "."),
+        "cpu_name_seperator": readwrite("CPU", "cpu_name_seperator", "="),
+        "cpu_value_seperator": readwrite("CPU", "cpu_value_seperator", "="),
+        }
 
 def main():
-    for shit in av_cpu_startup():
-        print(f">{shit}<")
-        print(type(shit))
+    for shit in av_cpu_ini(**av_cpu_startup()):
+        print(shit)
 
 if __name__ == "__main__":
     main()
