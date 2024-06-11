@@ -188,7 +188,7 @@ def readwrite(section:str, key:str, value, data_type:type=str, section_comment:s
                 config.read(config_file_name)
             else:
                 if section_comment != None:
-                    config.add_section(section_comment)
+                    config.add_section(";"+section_comment)
                 config.add_section(section)
             config.set(section, key, value)
         except ValueError:
