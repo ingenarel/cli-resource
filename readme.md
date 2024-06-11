@@ -438,3 +438,63 @@ bar_ini():
     red which is an x ammount of boxes.
     yellow which is the value of twice the number of green boxes.
     green which is the value of yellow and red combined.
+
+bar_maker():
+    this is the bar maker function. it takes these values:
+
+    resource_usage: which should be an int. this is the resource currently being used.
+        that means the ammount of boxes that the bar will show.
+
+    bar_height_and_color: which should be a dict object. this is actually a value and color map.
+    the bar_maker_ini() provides this. i didn't combine these two because this doesn't need to be calculated every time a new bar is calculated.
+    so i just made that a new function.
+
+    bar_width: this should be an int. it should be the width of the bar.
+
+    fill: this should be a string. this will fill the empty values in the bar.
+        the defualt value is " ".
+
+    zero_fill: this should be a string. this will make the represent the value of zero if the bar is totally empty.
+        the default value is ".".
+
+    it returns a list. if you print each item from that list you should see a vertical bar.
+
+chart_updater():
+    this is the chart updater.
+    it takes these values.
+    last_bar: it should be a list that should be the last bar that's made with the bar_maker() function.
+    last_chart: this should be the last chart that's either made with this function, or the starting chart that the code provides.
+        it's a custom 2d array. only provide your custom thing if you know what you're doing.
+
+    it returns the updated 2d array aka the updated chart.
+
+chart_parser():
+    this parses the 2d array returned from chart_updater into a human readeable chart.
+    it takes these values:
+
+    chart: this should be the chart returned from the chart_updater function. it should be a 2d array.
+    bar_width: this should be an int. this is the bar width.
+    chart_width: this should be an int. this is the chart width.
+        the default value is 30.
+    chart_name: this should be an string. this is the heading of the chart.
+        the default value is none.
+    left_gap: this should be an int. this should be the gap on the left side.
+        the default value is 0
+    right_gap: this should be an int. this should be the gap on the right side.
+        the default value is 0.
+    resource_usage: this should be a string. this should be the resource that's currently used.
+        the default value is None.
+    left_side: this should be a string. it's the left side bar.
+        the default value is "|"
+    right_side: this should be a string. it's the bar on the right side.
+        the default value is "|"
+    roof: this should be a string. it's the roof of the chart.
+        the default value is "_"
+    floor: this should be a string. it's the the floor of the chart.
+        the default value is "‾"
+    name_seperator: this should be a string. it's the seperator that seperates the actual chart from the heading.
+        the default value is "="
+    value_seperator: this should be a string. it's the seperator that seperates the actual chart from the value.
+        the default value is "="
+
+av_cpu_ini():
