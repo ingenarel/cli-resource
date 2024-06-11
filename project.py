@@ -188,7 +188,6 @@ def readwrite(section:str, key:str, value, data_type:type=str):
             config.write(configfile)
         continue
 
-
 def main():
     cpu_start = True
 
