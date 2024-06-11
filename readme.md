@@ -313,5 +313,7 @@ ______________________________________________________________
 |                            8.1%                            |
 ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 
+you can change the heading, the roof of the chart, the floor of the chart,
+the left side, the right side.
 
-
+let's change the roof
