@@ -188,8 +188,8 @@ def readwrite(section:str, key:str, value, data_type:type=str, section_comment:s
                 config.read(config_file_name)
             else:
                 config.add_section(section)
-                if section_comment != None:
-                    config.set(section, ";"+section_comment)
+            if section_comment != None:
+                config.set(section, ";"+section_comment)
             config.set(section, key, value)
         except ValueError:
             config.read(config_file_name)
@@ -199,10 +199,12 @@ def readwrite(section:str, key:str, value, data_type:type=str, section_comment:s
         continue
 
 def startup():
-    cpu_bar_height:int = readwrite("CPU", "cpu_bar_height", 10, int, section_comment="blalba")
-    cpu_chart_width:int = readwrite("CPU", "cpu_chart_width", 30, int)
-    print(f"=>{cpu_bar_height}<=")
+    cpu_bar_height:int = readwrite("CPU", "cpu_bar_height", 10, int)
+    cpu_chart_width:int = readwrite("CPU", "cpu_chart_width", 30, int, section_comment="blalba")
+    print(f"cpu_bar_height=>{cpu_bar_height}<=")
     print(type(cpu_bar_height))
+    print(f"cpu_chart_width=>{cpu_chart_width}<=")
+    print(type(cpu_chart_width))
 
 
 
