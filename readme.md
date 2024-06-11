@@ -5,7 +5,8 @@ this is a real time cli text based renderer that renders your cpu usage as a cha
 well, anyone can make a chart. but the thing is it's fully procedural and
 you can customize it to your liking.
 
-you can customize it in the resource_monitor.cfg file. this will be in the same directory as the python file.
+you can customize it in the resource_monitor.cfg file. this will be in the
+same directory as the python file.
 and you can't still find it, you probably need to run the script first.
 
 here's the default config file and i'll show you how to change it.
@@ -45,4 +46,5 @@ ________________________________
 |            16.5%             |
 ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 the config file is pretty straightforward.
-the cpu value seperator is the thing
+before we talk about anything in this file, we should actually talk about how
+to change the size of the chart width and height.
