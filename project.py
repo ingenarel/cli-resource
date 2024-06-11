@@ -197,8 +197,6 @@ def readwrite(section:str, key:str, value, data_type:type=str, section_comment:s
             # with open(config_file_name, "w") as configfile:
             #     config.write(configfile)
         finally:
-            if config.has_section(section):
-                config.read(config_file_name)
             with open(config_file_name, "w") as configfile:
                 config.write(configfile)
             continue
