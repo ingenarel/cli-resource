@@ -34,13 +34,11 @@ def bar_maker_ini(bar_height:int=10, box:str="█"):
     This is the initialization before the bar_maker() function makes the bars.
     It takes these value:
 
-    It takes a bar_height which is the bar height which should be an int.
-    if the bar height is less than 3, it doesn't allow it.
+    bar_height: which is the bar height which should be an int.
+        if the bar height is less than 3, it doesn't allow it.
 
-    it also takes a box which should be a string, and this will represent each
-    so called box that the chart will render.
-
-
+    box: which should be a string, and this will represent each
+        so called box that the chart will render.
 
     it returns a dict object. each value within the bar heigh representing a box.
 
@@ -78,18 +76,18 @@ def bar_maker(resource_usage:int, bar_height_and_color:dict, bar_width:int, fill
     """
     this is the bar maker function. it takes these values:
 
-    resource_usage which should be an int. this is the resource currently being used.
-    that means the ammount of boxes that the bar will show.
+    resource_usage: which should be an int. this is the resource currently being used.
+        that means the ammount of boxes that the bar will show.
 
-    bar_height_and_color which should be a dict object. this is actually a value and color map.
+    bar_height_and_color: which should be a dict object. this is actually a value and color map.
     the bar_maker_ini() provides this. i didn't combine these two because this doesn't need to be calculated every time a new bar is calculated.
     so i just made that a new function.
 
-    bar_width. this should be an int. it should be the width of the bar.
+    bar_width: this should be an int. it should be the width of the bar.
 
-    fill. this should be a string. this will fill the empty values in the bar.
+    fill: this should be a string. this will fill the empty values in the bar.
 
-    zero_fill. this should be a string. this will make the represent the value of zero if the bar is totally empty.
+    zero_fill: this should be a string. this will make the represent the value of zero if the bar is totally empty.
 
     it returns a list. if you print each item from that list you should see a vertical bar.
 
@@ -106,7 +104,9 @@ def chart_updater(
         last_chart:list,
         ):
     """
-    this is more of a
+    this is the chart updater.
+    it takes these values.
+    last_bar. this should be a bar that
     """
     last_chart.pop(0)
     last_chart.append(last_bar)
