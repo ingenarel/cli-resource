@@ -200,9 +200,10 @@ def main():
     else:
         last_cpu_starting_chart = chart_maker(**common, last_chart=last_cpu_starting_chart)
     clear()
-    for rows in last_cpu_starting_chart:
-        print(rows)
+    # for rows in last_cpu_starting_chart:
+    #     print(rows)
     # time_sleep(1)
+    print(last_cpu_starting_chart)
 
     # # for shit in cpu_starting_chart:
     # #     print(shit)
