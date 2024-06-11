@@ -382,6 +382,32 @@ cpu_heading = "FULL CUSTOMIZABILITY"
 and this happens:
 
 ```
+rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr
+y                    FULL CUSTOMIZABILITY                    x
+ynnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnx
+y                                                            x
+y                                                            x
+y                                                            x
+y                                                            x
+y              █                                             x
+y              █                                             x
+y              █                                             x
+y              █                                             x
+y              █                                             x
+y              █                                             x
+y              █                                            █x
+y              █                                           ██x
+y██          █ ██ █       █                           ██   ██x
+y████████████████████████████████  ████ ██ ██████████████████x
+y████████████████████████████████████████████████████████████x
+y████████████████████████████████████████████████████████████x
+y████████████████████████████████████████████████████████████x
+y████████████████████████████████████████████████████████████x
+y████████████████████████████████████████████████████████████x
+y████████████████████████████████████████████████████████████x
+yvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvx
+y                           51.2%                            x
+ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
 
 ```
 
