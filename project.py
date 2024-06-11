@@ -1,7 +1,9 @@
 """
 if you want to customize this you shouldn't touch this file.
 you should edit the resource_monitor function.
-don't worry it's hard to make that crash. i think.
+don't worry it's hard to make that crash. i think...
+
+but if you know what you're doing, please go on
 """
 
 from os import name as os_name
@@ -113,7 +115,8 @@ def chart_updater(
     this is the chart updater.
     it takes these values.
     last_bar: it should be a list that should be the last bar that's made with the bar_maker() function.
-    last_chart: this should be the last chart that's either made with this function, or the starting chart that the
+    last_chart: this should be the last chart that's either made with this function, or the starting chart that the code provides.
+        it's a custom 2d array. only provide your custom thing if you know what you're doing
     """
     last_chart.pop(0)
     last_chart.append(last_bar)
