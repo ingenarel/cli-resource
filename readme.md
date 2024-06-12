@@ -337,16 +337,6 @@ cpu_left_side = "y"
 
 this will generate a chart something like this:
 ```
-
-```
-
-you can even set a gap to the left and right side.
-let's change the values to these:
-cpu_right_gap = 4
-cpu_left_gap = 10
-and see what happens.
-
-```
 rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr
 y                         CPU Usage:                         x
 ynnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnx
@@ -373,6 +363,16 @@ y██████████████████████████�
 yvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvx
 y                           36.3%                            x
 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+```
+
+you can even set a gap to the left and right side.
+let's change the values to these:
+cpu_right_gap = 4
+cpu_left_gap = 10
+and see what happens.
+
+```
+
 
 ```
 
