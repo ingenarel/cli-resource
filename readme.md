@@ -372,7 +372,32 @@ cpu_left_gap = 10
 and see what happens.
 
 ```
-
+rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr
+y                                CPU Usage:                                x
+ynnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnx
+y                                                                          x
+y                                                                          x
+y                                                                          x
+y                                                                          x
+y                                                                          x
+y                                                                          x
+y                                                                          x
+y                                                                          x
+y                                                                          x
+y                                                                          x
+y                                                                          x
+y                                                                          x
+y                                                                          x
+y                                                                          x
+y                                                                          x
+y                                    █                                     x
+y                                    █                    █                x
+y                                    █   ██ █   █        ████   ██ █ ██    x
+y                                    ███ ████ █ ██ ███ ████████████████    x
+y          ..........................██████████████████████████████████    x
+yvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvx
+y                                  18.5%                                   x
+ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
 
 ```
 
